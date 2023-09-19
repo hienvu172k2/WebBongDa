@@ -17,7 +17,8 @@
     "@heroicons/vue": "^2.0.18",
     "@vicons/ionicons5": "^0.12.0",
     "font-awesome": "^4.7.0",
-    "vue": "^3.3.4"
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
