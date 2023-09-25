@@ -2,6 +2,7 @@ import { createApp } from "vue";
 import "./assets/css/style.css";
 import App from "./App.vue";
 import naive from "naive-ui";
+
 // import { ArrowBack, ArrowForward } from "@vicons/ionicons5";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -50,3 +51,4 @@ app.component("font-awesome-icon", FontAwesomeIcon);
 app.use(naive);
 app.use(router);
 app.mount("#app");
+app.use(NMessageProvider);
