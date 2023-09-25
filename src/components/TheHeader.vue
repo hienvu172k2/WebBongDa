@@ -16,7 +16,8 @@
                 </button>
             </div>
             <PopoverGroup class="hidden lg:flex lg:gap-x-12">
-                <a href="#" class="header-btn  text-sm font-semibold leading-6 text-gray-900">Trang Chủ</a>
+                <router-link to="/home" class="header-btn  text-sm font-semibold leading-6 text-gray-900">Trang Chủ</router-link>
+                
                 <Popover class="relative">
                     <PopoverButton class=" flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
                         Dịch Vụ
@@ -51,14 +52,14 @@
                                     class="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100">
                                     <!-- <component :is="item.icon" class="h-5 w-5 flex-none text-gray-400" aria-hidden="true" /> -->
                                     {{ item.name }}
-                                </a>
+                                </a>    
                             </div>
                         </PopoverPanel>
                     </transition>
                 </Popover>
-                <router-link to="/bookingball" class="header-btn text-sm font-semibold leading-6 text-gray-900"
+                <router-link to="/bookingball" class="header-btn text-sm font-semibold leading -6 text-gray-900 " 
                     >Đặt Sân</router-link>
-                <!-- <a src="" class="header-btn text-sm font-semibold leading-6 text-gray-900">Đặt Sân</a> -->
+                <!-- <a href="" class="header-btn text-sm font-semibold leading-6 text-gray-900 "  target="_blank" >Đặt Sân</a> -->
                 <a href="#" class="header-btn text-sm font-semibold leading-6 text-gray-900">Lịch Sân</a>
                 <a href="#" class="header-btn text-sm font-semibold leading-6 text-gray-900">Hình Ảnh</a>
                 <a href="#" class="header-btn text-sm font-semibold leading-6 text-gray-900">Liên Hệ</a>

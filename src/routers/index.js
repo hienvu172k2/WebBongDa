@@ -1,15 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import BookingBallLayout from '../components/DatSanBong/BookingBall.vue'; 
-
+// import BookingBallLayout from '../components/DatSanBong/BookingBallLayout.vue'; 
+import App from '../App.vue'
 const routes = [
   {
-    path: "/bookingball",
-    component: BookingBallLayout, 
+    path:"/app",
+    component:App,
     children: [
       {
-        path: "",
+        path: "bookingball",
         component: () =>
-          import( "../components/DatSanBong/BookingBall.vue"), 
+          import( "../components/DatSanBong/BookingBallLayout.vue"), 
       },
     ],
   },
