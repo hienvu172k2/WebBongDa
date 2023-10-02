@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 // import BookingBallLayout from '../components/DatSanBong/BookingBallLayout.vue'; 
-import App from '../App.vue'
+import App from '../App.vue';
 const routes = [
   {
     path:"/app",
@@ -11,6 +11,11 @@ const routes = [
         component: () =>
           import( "../components/DatSanBong/BookingBallLayout.vue"), 
       },
+      {
+        path:"detailball/:id",
+        component:() =>
+        import("../components/ChiTietSan/DetailBall.vue")
+      }
     ],
   },
 ];

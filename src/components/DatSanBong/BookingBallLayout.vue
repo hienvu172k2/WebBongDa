@@ -15,7 +15,7 @@
               <div>
                 <h1 class="text-sm font-medium text-gray-1000">
                   <a :href="product.href">
-                    <span aria-hidden="true" class="absolute inset-0"></span>
+                    <router-link :to="'/app/detailball/' + product.id" class="absolute inset-0"></router-link>
                     {{ product.name }}
                   </a>
                 </h1>
@@ -24,6 +24,8 @@
             <p class="text-sm  text-black-900">{{ product.area }}</p>
             <p class="text-sm  text-black-900">{{ product.people }}</p>
             <p class="text-sm  text-black-900">{{ product.price }}</p>
+
+            <!-- <router-link :to="'/app/detailball/' + product.id" class="mt-1 text-sm text-gray-500">{{ product.detail }}</router-link> -->
             <p class="mt-1 text-sm text-gray-500">{{ product.detail }}</p>
           </div>
         </div>
@@ -51,7 +53,7 @@ const products = [
     detail: 'Xem chi tiết',
   },
   {
-    id: 1,
+    id: 2,
     name: 'Sân Trường Đại Học Phenikaa',
     href: '#',
     area: "Khu Vực : Hà Đông",
@@ -62,7 +64,7 @@ const products = [
     detail: 'Xem chi tiết',
   },
   {
-    id: 1,
+    id: 3,
     name: 'Sân Trường Đại Học Phenikaa',
     href: '#',
     area: "Khu Vực : Hà Đông",
@@ -73,7 +75,7 @@ const products = [
     detail: 'Xem chi tiết',
   },
   {
-    id: 1,
+    id: 4,
     name: 'Sân Trường Đại Học Phenikaa',
     href: '#',
     area: "Khu Vực : Hà Đông",
@@ -84,7 +86,7 @@ const products = [
     detail: 'Xem chi tiết',
   },
   {
-    id: 1,
+    id: 5,
     name: 'Sân Trường Đại Học Phenikaa',
     href: '#',
     area: "Khu Vực : Hà Đông",
@@ -95,7 +97,7 @@ const products = [
     detail: 'Xem chi tiết',
   },
   {
-    id: 1,
+    id: 6,
     name: 'Sân Trường Đại Học Phenikaa',
     href: '#',
     area: "Khu Vực : Hà Đông",
@@ -106,7 +108,7 @@ const products = [
     detail: 'Xem chi tiết',
   },
   {
-    id: 1,
+    id: 7,
     name: 'Sân Trường Đại Học Phenikaa',
     href: '#',
     area: "Khu Vực : Hà Đông",
@@ -117,7 +119,7 @@ const products = [
     detail: 'Xem chi tiết',
   },
   {
-    id: 1,
+    id: 8,
     name: 'Sân Trường Đại Học Phenikaa',
     href: '#',
     area: "Khu Vực : Hà Đông",
@@ -128,7 +130,7 @@ const products = [
     detail: 'Xem chi tiết',
   },
   {
-    id: 1,
+    id: 9,
     name: 'Sân Trường Đại Học Phenikaa',
     href: '#',
     area: "Khu Vực : Hà Đông",
@@ -139,7 +141,7 @@ const products = [
     detail: 'Xem chi tiết',
   },
   {
-    id: 1,
+    id: 10,
     name: 'Sân Trường Đại Học Phenikaa',
     href: '#',
     area: "Khu Vực : Hà Đông",
@@ -150,7 +152,7 @@ const products = [
     detail: 'Xem chi tiết',
   },
   {
-    id: 1,
+    id: 11,
     name: 'Sân Trường Đại Học Phenikaa',
     href: '#',
     area: "Khu Vực : Hà Đông",
@@ -161,7 +163,7 @@ const products = [
     detail: 'Xem chi tiết',
   },
   {
-    id: 1,
+    id: 12,
     name: 'Sân Trường Đại Học Phenikaa',
     href: '#',
     area: "Khu Vực : Hà Đông",
@@ -196,4 +198,5 @@ const products = [
 .pagination{
   padding-bottom:100px;
 }
+
 </style>

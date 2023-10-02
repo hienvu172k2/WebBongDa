@@ -1,8 +1,10 @@
 <template>
   <div class="wrapper">
     <TheHeader />
-    <router-view class="bookingball" />
-    <FooterBall  />
+    <!-- <router-view class="bookingball" />
+    <router-view class="detailball/:id" /> -->
+    <!-- <FooterBall  /> -->
+    <router-view />
   </div>
 </template>
 
@@ -16,4 +18,5 @@ import FooterBall from './components/FooterBall.vue';
 .bookingball{
   padding-top:130px;
 }
+
 </style>
