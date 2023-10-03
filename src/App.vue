@@ -1,10 +1,9 @@
 <template>
   <div class="wrapper">
     <TheHeader />
-    <!-- <router-view class="bookingball" />
-    <router-view class="detailball/:id" /> -->
-    <!-- <FooterBall  /> -->
-    <router-view />
+    <router-view class="bookingball"/>
+    <FooterBall  />
+    
   </div>
 </template>
 

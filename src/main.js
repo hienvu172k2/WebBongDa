@@ -2,8 +2,6 @@ import { createApp } from "vue";
 import "./assets/css/style.css";
 import App from "./App.vue";
 import naive from "naive-ui";
-
-// import { ArrowBack, ArrowForward } from "@vicons/ionicons5";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {
@@ -21,18 +19,20 @@ import { createRouter, createWebHistory } from "vue-router";
 import BookingBallLayout from "./components/DatSanBong/BookingBallLayout.vue";
 import DetailBall from "./components/ChiTietSan/DetailBall.vue";
 import Home from "./views/index.vue";
+import { NMessageProvider } from "naive-ui";
+import ThanhToanBall from './components/ThanhToan/ThanhToanBall.vue';
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    // { path: "/app", component: App },
-    { path: "/bookingball", component: BookingBallLayout },
-    { path: "/detailball/:id", component: DetailBall },
     {
       path: "/",
       component: Home,
       alias: "/home",
     },
+    { path: "/bookingball", component: BookingBallLayout },
+    { path: "/detailball/:id", component: DetailBall },
+    { path: "/thanhtoanball", component: ThanhToanBall },
   ],
 });
 

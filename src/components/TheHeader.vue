@@ -59,7 +59,7 @@
                 </Popover>
                 <router-link to="/bookingball" class="header-btn text-sm font-semibold leading -6 text-gray-900 " 
                     >Đặt Sân</router-link>
-                <!-- <a href="" class="header-btn text-sm font-semibold leading-6 text-gray-900 "  target="_blank" >Đặt Sân</a> -->
+
                 <a href="#" class="header-btn text-sm font-semibold leading-6 text-gray-900">Lịch Sân</a>
                 <a href="#" class="header-btn text-sm font-semibold leading-6 text-gray-900">Hình Ảnh</a>
                 <a href="#" class="header-btn text-sm font-semibold leading-6 text-gray-900">Liên Hệ</a>
