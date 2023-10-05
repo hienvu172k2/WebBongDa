@@ -145,8 +145,6 @@ import {
 } from "@heroicons/vue/24/outline";
 import {
   ChevronDownIcon,
-  PhoneIcon,
-  PlayCircleIcon,
 } from "@heroicons/vue/20/solid";
 
 const products = [

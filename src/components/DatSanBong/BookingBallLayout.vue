@@ -1,6 +1,6 @@
 <template>
   <div class="warraper">
-      <SearchBall/>
+    <SearchBall />
     <div class="bg-white">
       <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <h2 class="text-2xl font-bold tracking-tight text-gray-900">Sân Bóng Đá</h2>
@@ -28,48 +28,50 @@
         </div>
       </div>
     </div>
-    <div class="pagination flex justify-center items-center"><PaginationBall /></div>
-    
-    
-  </div>  
+    <div class="pagination flex justify-center items-center">
+      <PaginationBall />
+    </div>
+  
+  
+  </div>
 </template>
   
 <script setup>
-import PaginationBall from './PaginationBall.vue'
-import SearchBall from './SearchBall.vue'
+
+import PaginationBall from './PaginationBall.vue';
+import SearchBall from './SearchBall.vue';
 const products = [
   {
     id: 1,
-    name: 'Sân Trường Đại Học Phenikaa',
+    name: 'Sân bóng Trường Đại Học Phenikaa',
     href: '#',
     area: "Khu Vực : Hà Đông",
     people: "Sân : 7 người",
     imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: 'Giá : 300.000 - 400.000 / Trận',
-    
+    price: 'Giá : 300.000 - 500.000 / Trận',
+
   },
   {
     id: 2,
-    name: 'Sân Trường Đại Học Phenikaa',
+    name: 'Sân bóng Minh Kiệt',
     href: '#',
-    area: "Khu Vực : Hà Đông",
-    people: "Sân : 7 người",
-    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
+    area: "Khu Vực : Thanh Xuân",
+    people: "Sân : 5 người",
+    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2022/01/15/original/mk-2_1642245566.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: 'Giá : 300.000 - 400.000 / Trận',
-    
+    price: 'Giá : 500.000 - 700.000 / Trận',
   },
   {
     id: 3,
-    name: 'Sân Trường Đại Học Phenikaa',
+    name: 'Sân bóng Yên Hòa',
     href: '#',
-    area: "Khu Vực : Hà Đông",
-    people: "Sân : 7 người",
-    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
+    area: "Khu Vực : Cầu Giấy",
+    people: "Sân : 9 người",
+    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/29/original/san-bong-yen-hoa-img1_1611854871.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: 'Giá : 300.000 - 400.000 / Trận',
-    
+    price: 'Giá : 700.000 - 1.000.000 / Trận',
+
   },
   {
     id: 4,
@@ -80,7 +82,7 @@ const products = [
     imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
     price: 'Giá : 300.000 - 400.000 / Trận',
-    
+
   },
   {
     id: 5,
@@ -91,7 +93,7 @@ const products = [
     imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
     price: 'Giá : 300.000 - 400.000 / Trận',
-    
+
   },
   {
     id: 6,
@@ -102,7 +104,7 @@ const products = [
     imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
     price: 'Giá : 300.000 - 400.000 / Trận',
-    
+
   },
   {
     id: 7,
@@ -113,7 +115,7 @@ const products = [
     imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
     price: 'Giá : 300.000 - 400.000 / Trận',
-    
+
   },
   {
     id: 8,
@@ -124,7 +126,7 @@ const products = [
     imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
     price: 'Giá : 300.000 - 400.000 / Trận',
-    
+
   },
   {
     id: 9,
@@ -135,7 +137,7 @@ const products = [
     imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
     price: 'Giá : 300.000 - 400.000 / Trận',
-    
+
   },
   {
     id: 10,
@@ -146,7 +148,7 @@ const products = [
     imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
     price: 'Giá : 300.000 - 400.000 / Trận',
-    
+
   },
   {
     id: 11,
@@ -157,7 +159,7 @@ const products = [
     imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
     price: 'Giá : 300.000 - 400.000 / Trận',
-    
+
   },
   {
     id: 12,
@@ -168,11 +170,13 @@ const products = [
     imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
     price: 'Giá : 300.000 - 400.000 / Trận',
-    
+
   },
 
 
 ]
+
+
 </script>
 <style scoped>
 .warraper {
@@ -192,8 +196,8 @@ const products = [
   border-radius: 0.5rem;
   box-shadow: 0 1px 8px 3px #ccc;
 }
-.pagination{
-  padding-bottom:100px;
-}
 
+.pagination {
+  padding-bottom: 100px;
+}
 </style>

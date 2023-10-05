@@ -8,6 +8,7 @@ import {
   faLocationDot,
   faEnvelope,
   faPhone,
+  faCreditCard
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faTwitter,
@@ -20,7 +21,7 @@ import BookingBallLayout from "./components/DatSanBong/BookingBallLayout.vue";
 import DetailBall from "./components/ChiTietSan/DetailBall.vue";
 import Home from "./views/index.vue";
 import { NMessageProvider } from "naive-ui";
-import ThanhToanBall from './components/ThanhToan/ThanhToanBall.vue';
+import ThanhToanBall from "./components/ThanhToan/ThanhToanBall.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -43,11 +44,12 @@ library.add(
   faFacebook,
   faTwitter,
   faSquareInstagram,
-  faGooglePlus
+  faGooglePlus,
+  faCreditCard
 );
 const app = createApp(App);
 app.component("font-awesome-icon", FontAwesomeIcon);
 app.use(naive);
 app.use(router);
 app.mount("#app");
-app.use(NMessageProvider);
+  

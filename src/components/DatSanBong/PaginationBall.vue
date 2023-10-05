@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-        <n-pagination v-model:page="page" :page-count="100" />
+        <n-pagination v-model:page="page" :page-count="10" />
     </div>
 </template>
   
