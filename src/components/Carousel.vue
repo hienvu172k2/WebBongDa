@@ -1,8 +1,8 @@
 <template>
     <n-carousel show-arrow autoplay>
-        <img class="carousel-img" src="https://sanconhantao.vn/wp-content/uploads/2020/09/Banner-top.jpg">
-        <img class="carousel-img" src="https://sanconhantao.vn/wp-content/uploads/2020/09/Banner-top-3.jpg">
-        <img class="carousel-img" src="https://sanconhantao.vn/wp-content/uploads/2020/09/Banner-top-2.jpg">
+        <img class="carousel-img" src="https://thuthuatnhanh.com/wp-content/uploads/2022/06/Anh-bong-da-sieu-dep.jpg">
+        <img class="carousel-img" src="https://png.pngtree.com/background/20210714/original/pngtree-late-night-auditorium-football-field-background-picture-image_1233663.jpg">
+        <img class="carousel-img" src="https://get.pxhere.com/photo/grass-structure-lawn-soccer-football-stadium-player-baseball-field-sports-equipment-golf-club-sports-net-ball-kick-football-player-football-field-sport-venue-soccer-specific-stadium-1395402.jpg">
        
         <template #arrow="{ prev, next }">
             <div class="custom-arrow">

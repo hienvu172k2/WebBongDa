@@ -1,9 +1,8 @@
 <template>
   <div class="wrapper">
     <TheHeader />
-    <router-view class="bookingball"/>
-    <FooterBall  />
-    
+    <router-view class="bookingball" />
+    <FooterBall />
   </div>
 </template>
 
@@ -14,8 +13,7 @@ import FooterBall from './components/FooterBall.vue';
 
 </script>
 <style scoped>
-.bookingball{
-  padding-top:130px;
+.bookingball {
+  padding-top: 130px;
 }
-
-</style>
+</style>  

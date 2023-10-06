@@ -8,7 +8,7 @@ import {
   faLocationDot,
   faEnvelope,
   faPhone,
-  faCreditCard
+  faCreditCard,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faTwitter,
@@ -20,7 +20,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import BookingBallLayout from "./components/DatSanBong/BookingBallLayout.vue";
 import DetailBall from "./components/ChiTietSan/DetailBall.vue";
 import Home from "./views/index.vue";
-import { NMessageProvider } from "naive-ui";
+import AboutUsVue from "./components/AboutUs.vue";
 import ThanhToanBall from "./components/ThanhToan/ThanhToanBall.vue";
 
 const router = createRouter({
@@ -34,6 +34,7 @@ const router = createRouter({
     { path: "/bookingball", component: BookingBallLayout },
     { path: "/detailball/:id", component: DetailBall },
     { path: "/thanhtoanball", component: ThanhToanBall },
+    { path: "/aboutus", component: AboutUsVue },
   ],
 });
 
@@ -52,4 +53,3 @@ app.component("font-awesome-icon", FontAwesomeIcon);
 app.use(naive);
 app.use(router);
 app.mount("#app");
-  

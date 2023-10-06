@@ -18,7 +18,10 @@ const routes = [
         path: ":id/thanhtoanball",
         component: () =>
           import("../components/ThanhToan/ThanhToanBall.vue"),
-      },
+      },{
+        path:'aboutus',
+        component:()=> import("../components/AboutUs.vue")
+      }
     ],
   },
 ];
