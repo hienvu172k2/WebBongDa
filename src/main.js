@@ -22,7 +22,8 @@ import DetailBall from "./components/ChiTietSan/DetailBall.vue";
 import Home from "./views/index.vue";
 import AboutUsVue from "./components/AboutUs.vue";
 import ThanhToanBall from "./components/ThanhToan/ThanhToanBall.vue";
-
+import Login from "./components/Account/Login.vue";
+import Register from "./components/Account/Register.vue";
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -35,6 +36,8 @@ const router = createRouter({
     { path: "/detailball/:id", component: DetailBall },
     { path: "/thanhtoanball", component: ThanhToanBall },
     { path: "/aboutus", component: AboutUsVue },
+    { path: "/login", component: Login },
+    { path: "/register", component: Register },
   ],
 });
 

@@ -22,6 +22,13 @@ const routes = [
         path:'aboutus',
         component:()=> import("../components/AboutUs.vue")
       }
+      {
+        path:"login",
+        component:() => import("../components/Account/Login.vue")
+      },{
+        path:"register",
+        component:() => import("../components/Account/Register.vue")
+      }
     ],
   },
 ];
