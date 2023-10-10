@@ -51,7 +51,8 @@
                         <button @click="handlePayment">Thanh Toán</button>
                         <div v-if="!isPaymentValid && paymentClicked" style="color: red;">Vui lòng chọn phương thức thanh
                             toán !</div>
-                        <div v-if="isPaymentValid && paymentClicked" style="color :rgb(0, 218, 0)">Đặt sân thành công !</div>
+                        <div v-if="isPaymentValid && paymentClicked" style="color :rgb(0, 218, 0)">Đặt sân thành công !
+                        </div>
                     </div>
     
                 </n-gi>
@@ -188,8 +189,9 @@ const infoImage = ref({
 .cash-banking {
     height: 50px;
     line-height: 50px;
-    font-size:18px;
+    font-size: 18px;
 }
+
 .cash-banking label {
     padding: 10px;
 }
@@ -207,10 +209,8 @@ const infoImage = ref({
 }
 
 .input-checkbox {
-    margin: 0 5px ;
+    margin: 0 5px;
     cursor: pointer;
-    
+
 }
-
-
 </style>

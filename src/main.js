@@ -9,6 +9,13 @@ import {
   faEnvelope,
   faPhone,
   faCreditCard,
+  faUser,
+  faArrowRightFromBracket,
+  faUserPen,
+  faTag,
+  faHeadphones,
+  faFileInvoiceDollar,
+  faFutbol,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faTwitter,
@@ -16,6 +23,23 @@ import {
   faSquareInstagram,
   faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
+library.add(
+  faLocationDot,
+  faEnvelope,
+  faPhone,
+  faFacebook,
+  faTwitter,
+  faSquareInstagram,
+  faGooglePlus,
+  faCreditCard,
+  faUser,
+  faArrowRightFromBracket,
+  faUserPen,
+  faTag,
+  faHeadphones,
+  faFileInvoiceDollar,
+  faFutbol
+);
 import { createRouter, createWebHistory } from "vue-router";
 import BookingBallLayout from "./components/DatSanBong/BookingBallLayout.vue";
 import DetailBall from "./components/ChiTietSan/DetailBall.vue";
@@ -24,6 +48,8 @@ import AboutUsVue from "./components/AboutUs.vue";
 import ThanhToanBall from "./components/ThanhToan/ThanhToanBall.vue";
 import Login from "./components/Account/Login.vue";
 import Register from "./components/Account/Register.vue";
+import UserProfile from "./components/Profile/UserProfile.vue";
+
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -38,19 +64,10 @@ const router = createRouter({
     { path: "/aboutus", component: AboutUsVue },
     { path: "/login", component: Login },
     { path: "/register", component: Register },
+    { path: "/user", component: UserProfile },
   ],
 });
 
-library.add(
-  faLocationDot,
-  faEnvelope,
-  faPhone,
-  faFacebook,
-  faTwitter,
-  faSquareInstagram,
-  faGooglePlus,
-  faCreditCard
-);
 const app = createApp(App);
 app.component("font-awesome-icon", FontAwesomeIcon);
 app.use(naive);

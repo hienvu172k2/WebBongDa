@@ -16,19 +16,24 @@ const routes = [
       },
       {
         path: ":id/thanhtoanball",
-        component: () =>
-          import("../components/ThanhToan/ThanhToanBall.vue"),
-      },{
-        path:'aboutus',
-        component:()=> import("../components/AboutUs.vue")
-      }
+        component: () => import("../components/ThanhToan/ThanhToanBall.vue"),
+      },
       {
-        path:"login",
-        component:() => import("../components/Account/Login.vue")
-      },{
-        path:"register",
-        component:() => import("../components/Account/Register.vue")
-      }
+        path: "aboutus",
+        component: () => import("../components/AboutUs.vue"),
+      },
+      {
+        path: "login",
+        component: () => import("../components/Account/Login.vue"),
+      },
+      {
+        path: "register",
+        component: () => import("../components/Account/Register.vue"),
+      },
+      {
+        path: "user",
+        component: () => import("../components/Profile/UserProfile.vue"),
+      },
     ],
   },
 ];
