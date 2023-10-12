@@ -54,7 +54,7 @@ import ThanhToanBall from "./components/ThanhToan/ThanhToanBall.vue";
 import Login from "./components/Account/Login.vue";
 import Register from "./components/Account/Register.vue";
 import UserProfile from "./components/Profile/Users/UserProfile.vue";
-
+import { NPagination } from 'naive-ui';
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -73,8 +73,9 @@ const router = createRouter({
   ],
 });
 
-const app = createApp(App);
+const app = createApp(App); 
 app.component("font-awesome-icon", FontAwesomeIcon);
 app.use(naive);
 app.use(router);
 app.mount("#app");
+app.component(NPagination.name, NPagination);

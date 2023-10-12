@@ -4,49 +4,39 @@
       <n-grid cols="6">
         <n-grid-item span="3">
           <div class="filter flex justify-center items-center">
-  
             <div>
               <n-space item-style="display: flex;" vertical>
                 <h1 class="content-btn">Khu Vực</h1>
-                <n-checkbox :checked="isChecked('hadong')" @update:checked="updateChecked('hadong')" value="hadong"
-                  label="Hà Đông" />
-                <n-checkbox-group v-model:value="citiesRegion" @update:value="filterProducts">
-                  <n-space item-style="display: flex;">
-                    <n-checkbox value="caugiay" label="Cầu Giấy" />
-                    <n-checkbox value="thanhxuan" label="Thanh Xuân" />
-                    <n-checkbox value="dongda" label="Đống Đa" />
-                  </n-space>
-                </n-checkbox-group>
+                <n-checkbox value="hadong" label="Hà Đông" />
+                <n-space item-style="display: flex;">
+                  <n-checkbox value="caugiay" label="Cầu Giấy" />
+                  <n-checkbox value="thanhxuan" label="Thanh Xuân" />
+                  <n-checkbox value="dongda" label="Đống Đa" />
+                </n-space>
               </n-space>
             </div>
   
             <div>
               <n-space item-style="display: flex;" vertical>
                 <h1 class="content-btn">Giá</h1>
-                <n-checkbox v-model:checked="checkedPrice" value="thap" label="< 300.000"
-                  @update:checked="handleCheckedChange(checkedPrice, 'Price')" />
-                <n-checkbox-group v-model:value="citiesPrice" @update:value="handleUpdateValue(citiesPrice)">
-                  <n-space item-style="display: flex;">
-                    <n-checkbox value="trungbinh" label="300.000 - 500.000" />
-                    <n-checkbox value="trungbinhkha" label="500.000 - 700.000" />
-                    <n-checkbox value="cao" label="700.000 - 1.000.000" />
-                  </n-space>
-                </n-checkbox-group>
+                <n-checkbox value="thap" label="< 300.000" />
+                <n-space item-style="display: flex;">
+                  <n-checkbox value="trungbinh" label="300.000 - 500.000" />
+                  <n-checkbox value="trungbinhkha" label="500.000 - 700.000" />
+                  <n-checkbox value="cao" label="700.000 - 1.000.000" />
+                </n-space>
               </n-space>
             </div>
   
             <div>
               <n-space item-style="display: flex;" vertical>
                 <h1 class="content-btn">Loại Sân</h1>
-                <n-checkbox v-model:checked="checkedCourtType" value="namnguoi" label="5 người"
-                  @update:checked="handleCheckedChange(checkedCourtType, 'CourtType')" />
-                <n-checkbox-group v-model:value="citiesCourtType" @update:value="handleUpdateValue(citiesCourtType)">
-                  <n-space item-style="display: flex;">
-                    <n-checkbox value="baynguoi" label="7 người" />
-                    <n-checkbox value="chinnguoi" label="9 người" />
-                    <n-checkbox value="muoimotnguoi" label="11 người" />
-                  </n-space>
-                </n-checkbox-group>
+                <n-checkbox value="namnguoi" label="5 người" />
+                <n-space item-style="display: flex;">
+                  <n-checkbox value="baynguoi" label="7 người" />
+                  <n-checkbox value="chinnguoi" label="9 người" />
+                  <n-checkbox value="muoimotnguoi" label="11 người" />
+                </n-space>
               </n-space>
             </div>
           </div>
@@ -89,23 +79,15 @@
       </div>
     </div>
     <div class="pagination flex justify-center items-center">
-      <n-pagination :modelValue="page" :page-count="totalPages" @update:modelValue="handlePageChange" />
+      <n-pagination v-model="page" :page-count="totalPages" @current-change="changePage" />
     </div>
-  
-  
   </div>
 </template>
-  
+
 <script setup>
-import { ref, onMounted, watch, computed } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import { NPagination } from 'naive-ui';
 
-const checkedRegion = ref([]);
-const citiesRegion = ref([]);
-const checkedPrice = ref([]);
-const citiesPrice = ref([]);
-const checkedCourtType = ref([]);
-const citiesCourtType = ref([]);
 const filteredProducts = ref([]);
 const page = ref(1);
 const pageSize = 12;
@@ -240,179 +222,25 @@ const products = [
     price: '300.000 - 400.000',
 
   },
-  {
-    id: 14,
-    name: 'Sân Trường Đại Học Phenikaa',
-    href: '#',
-    area: "Hà Đông",
-    people: "7",
-    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
-    price: '300.000 - 400.000',
-
-  },
-  {
-    id: 15,
-    name: 'Sân Trường Đại Học Phenikaa',
-    href: '#',
-    area: "Hà Đông",
-    people: "7",
-    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
-    price: '300.000 - 400.000',
-
-  },
-  {
-    id: 16,
-    name: 'Sân Trường Đại Học Phenikaa',
-    href: '#',
-    area: "Hà Đông",
-    people: "7",
-    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
-    price: '300.000 - 400.000',
-
-  },
-  {
-    id: 17,
-    name: 'Sân Trường Đại Học Phenikaa',
-    href: '#',
-    area: "Hà Đông",
-    people: "7",
-    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
-    price: '300.000 - 400.000',
-
-  },
-  {
-    id: 18,
-    name: 'Sân Trường Đại Học Phenikaa',
-    href: '#',
-    area: "Hà Đông",
-    people: "7",
-    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
-    price: '300.000 - 400.000',
-
-  },
-  {
-    id: 19,
-    name: 'Sân Trường Đại Học Phenikaa',
-    href: '#',
-    area: "Hà Đông",
-    people: "7",
-    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
-    price: '300.000 - 400.000',
-
-  },
-  {
-    id: 20,
-    name: 'Sân Trường Đại Học Phenikaa',
-    href: '#',
-    area: "Hà Đông",
-    people: "7",
-    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
-    price: '300.000 - 400.000',
-
-  },
-  {
-    id: 21,
-    name: 'Sân Trường Đại Học Phenikaa',
-    href: '#',
-    area: "Hà Đông",
-    people: "7",
-    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
-    price: '300.000 - 400.000',
-
-  },
-  {
-    id: 22,
-    name: 'Sân Trường Đại Học Phenikaa',
-    href: '#',
-    area: "Hà Đông",
-    people: "7",
-    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
-    price: '300.000 - 400.000',
-
-  },
-  {
-    id: 23,
-    name: 'Sân Trường Đại Học Phenikaa',
-    href: '#',
-    area: "Hà Đông",
-    people: "7",
-    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
-    price: '300.000 - 400.000',
-
-  },
-  {
-    id: 24,
-    name: 'Sân Trường Đại Học Phenikaa',
-    href: '#',
-    area: "Hà Đông",
-    people: "7",
-    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
-    price: '300.000 - 400.000',
-
-  },
-  {
-    id: 25,
-    name: 'Sân Trường Đại Học Phenikaa',
-    href: '#',
-    area: "Hà Đông",
-    people: "7",
-    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
-    price: '300.000 - 400.000',
-
-  },
 ]
 
 
 const totalPages = computed(() => Math.ceil(filteredProducts.value.length / pageSize));
 
+const changePage = (newPage) => {
+  console.log("newPage", newPage)
+  page.value = newPage; v
+};
 const currentPageProducts = computed(() => {
   const startIdx = (page.value - 1) * pageSize;
   const endIdx = startIdx + pageSize;
   return filteredProducts.value.slice(startIdx, endIdx);
 });
-const handlePageChange = (newPage) => {
-  page.value = newPage;
-};
-const isChecked = (value) => {
-  return checkedRegion.value.includes(value);
-};
-const updateChecked = (value) => {
-  if (isChecked(value)) {
-    checkedRegion.value = checkedRegion.value.filter(item => item !== value);
-  } else {
-    checkedRegion.value.push(value);
-  }
-};
-
-const handleUpdateValue = (value, column) => {
-  if (column === 'Region') {
-    citiesRegion.value = value;
-  } else if (column === 'Price') {
-    citiesPrice.value = value;
-  } else if (column === 'CourtType') {
-    citiesCourtType.value = value;
-  }
-};
-
-const filterProducts = (column) => {
-  filteredProducts.value = products.filter(product => {
-    return (
-      (citiesRegion.value.length === 0 || citiesRegion.value.includes(product.area)) &&
-      (citiesPrice.value.length === 0 || citiesPrice.value.includes(product.price)) &&
-      (citiesCourtType.value.length === 0 || citiesCourtType.value.includes(product.people))
-    );
-  });
-};
-
-watch([citiesRegion, citiesPrice, citiesCourtType, page], () => {
-  filterProducts('All');
-});
 
 onMounted(() => {
-  filterProducts('All');
+  filteredProducts.value = products;
 });
 </script>
-
 
 
 
