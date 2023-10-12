@@ -34,9 +34,9 @@
       </n-gi>
       <n-gi span="5" class="content">
         <div v-if="selectedTab === 'account'">
-          <Account :userImage="userImage" @updateUserImage="updateUserImage" />
+          <Account />
         </div>
-        <div v-if="selectedTab === 'bookings'">Nội dung Thông Tin Sân Đã Đặt</div>
+        <div v-if="selectedTab === 'bookings'"> <BookedBall/> </div>
         <div v-if="selectedTab === 'transactions'">Nội dung Lịch Sử Giao Dịch</div>
         <div v-if="selectedTab === 'promotions'">Nội dung Ưu Đãi Và Khuyến Mãi</div>
         <div v-if="selectedTab === 'support'">Nội dung Hỗ Trợ</div>
@@ -47,16 +47,13 @@
 
 <script setup>
 import { ref } from "vue";
-import Account from "./Information/Account.vue"
-
+import Account from "./Account.vue"
+import BookedBall from "./BookedBall.vue"
 const selectedTab = ref("account");
 const userImage = ref({
   url: "https://th.bing.com/th/id/OIP.Fogk0Q6C7GEQEdVyrbV9MwHaHa?pid=ImgDet&rs=1"
 });
 
-function updateUserImage(newImage) {
-  userImage.value.url = newImage.url;
-}
 </script>
 
 <style scoped>
@@ -67,13 +64,16 @@ function updateUserImage(newImage) {
 }
 
 .menu {
-  height: 430px;
+  height: 480px;
+  width: 250px;
+  max-width: 100%;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   margin: 15px 10px 0 0;
 }
 
 .content {
   height: 800px;
+  width: auto;
   margin: 15px 10px 0 0;
 }
 
@@ -106,11 +106,15 @@ function updateUserImage(newImage) {
 
 .menu-down {
   padding: 10px;
+  width: 100%;
+  height: auto ;
 }
 
 .menu-down ul li {
   padding: 10px 10px;
   cursor: pointer;
+  max-width: 250px; 
+  white-space: nowrap; /* Ngăn nội dung xuống dòng */
 }
 
 .menu-down ul li:hover {

@@ -37,7 +37,7 @@
                                     <div
                                         class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                                         <!-- <component :is="item.icon" class="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
-                                                                                                              aria-hidden="true" /> -->
+                                                                                                                  aria-hidden="true" /> -->
                                     </div>
                                     <div class="flex-auto">
                                         <a :href="item.href" class="block font-semibold text-gray-900">
@@ -64,14 +64,8 @@
                 <a href="#" class="header-btn text-sm font-semibold leading-6 text-gray-900">Hỗ Trợ</a>
             </PopoverGroup>
             <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-                <!-- <router-link to="/login" class="header-btn  text-sm font-semibold leading-6 text-gray-900">Log
-                                                                    in</router-link> -->
     
-                <!-- <n-dropdown :options="options">
-                                                    
-                                                    <n-avatar round size="medium"
-                                                        src="https://th.bing.com/th/id/R.168824d10e82ec611011d572adb57d33?rik=ckwL%2fl%2f3xh1cFw&pid=ImgRaw&r=0" />
-                                                </n-dropdown> -->
+    
                 <div class="dropdown">
                     <!-- Avatar -->
                     <div class="avatar" @click="toggleDropdown">
@@ -84,11 +78,11 @@
                         <ul>
                             <router-link to="/user">
                                 <li>
-                                <a href="#" class="menu-item">
-                                    <font-awesome-icon :icon="['fas', 'user']" class="icon" />
-                                </a>
-                                Profile
-                            </li>
+                                    <a href="#" class="menu-item">
+                                        <font-awesome-icon :icon="['fas', 'user']" class="icon" />
+                                    </a>
+                                    Profile
+                                </li>
                             </router-link>
                             <li>
                                 <a href="#" class="menu-item">

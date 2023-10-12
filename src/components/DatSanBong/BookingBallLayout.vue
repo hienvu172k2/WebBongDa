@@ -65,7 +65,7 @@
       <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <h2 class="text-2xl font-bold tracking-tight text-gray-900">Sân Bóng Đá</h2>
         <div class="mt-6 grid gap-x-5 gap-y-5 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-5">
-          <div v-for="product in filteredProducts" :key="product.id" class="group relative">
+          <div v-for="product in currentPageProducts" :key="product.id" class="group relative">
             <div
               class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
               <img :src="product.imageSrc" :alt="product.imageAlt"
@@ -89,7 +89,7 @@
       </div>
     </div>
     <div class="pagination flex justify-center items-center">
-      <PaginationBall />
+      <n-pagination :modelValue="page" :page-count="totalPages" @update:modelValue="handlePageChange" />
     </div>
   
   
@@ -97,11 +97,8 @@
 </template>
   
 <script setup>
-// import { ref, onMounted } from "vue";
-import { ref, computed, onMounted, watch } from 'vue';
-import PaginationBall from './PaginationBall.vue';
-// const checkedRegion = ref(false);
-// const citiesRegion = ref(null);
+import { ref, onMounted, watch, computed } from 'vue';
+import { NPagination } from 'naive-ui';
 
 const checkedRegion = ref([]);
 const citiesRegion = ref([]);
@@ -110,30 +107,8 @@ const citiesPrice = ref([]);
 const checkedCourtType = ref([]);
 const citiesCourtType = ref([]);
 const filteredProducts = ref([]);
-
-// const isChecked = (value) => {
-//   return checkedRegion.value.includes(value) || citiesRegion.value.includes(value);
-// };
-// const handleCheckedChange = (checked, column) => {
-//   if (column === "Region") {
-//     checkedRegion.value = checked;
-//   } else if (column === "Price") {
-//     checkedPrice.value = checked;
-//   } else if (column === "CourtType") {
-//     checkedCourtType.value = checked;
-//   }
-// };
-
-// const handleUpdateValue = (value, column) => {
-//   if (column === "Region") {
-//     citiesRegion.value = value;
-//   } else if (column === "Price") {
-//     citiesPrice.value = value;
-//   } else if (column === "CourtType") {
-//     citiesCourtType.value = value;
-//   }
-// };
-
+const page = ref(1);
+const pageSize = 12;
 
 const products = [
   {
@@ -255,34 +230,160 @@ const products = [
     price: '300.000 - 400.000',
 
   },
+  {
+    id: 13,
+    name: 'Sân Trường Đại Học Phenikaa',
+    href: '#',
+    area: "Hà Đông",
+    people: "7",
+    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
+    price: '300.000 - 400.000',
 
+  },
+  {
+    id: 14,
+    name: 'Sân Trường Đại Học Phenikaa',
+    href: '#',
+    area: "Hà Đông",
+    people: "7",
+    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
+    price: '300.000 - 400.000',
 
+  },
+  {
+    id: 15,
+    name: 'Sân Trường Đại Học Phenikaa',
+    href: '#',
+    area: "Hà Đông",
+    people: "7",
+    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
+    price: '300.000 - 400.000',
+
+  },
+  {
+    id: 16,
+    name: 'Sân Trường Đại Học Phenikaa',
+    href: '#',
+    area: "Hà Đông",
+    people: "7",
+    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
+    price: '300.000 - 400.000',
+
+  },
+  {
+    id: 17,
+    name: 'Sân Trường Đại Học Phenikaa',
+    href: '#',
+    area: "Hà Đông",
+    people: "7",
+    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
+    price: '300.000 - 400.000',
+
+  },
+  {
+    id: 18,
+    name: 'Sân Trường Đại Học Phenikaa',
+    href: '#',
+    area: "Hà Đông",
+    people: "7",
+    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
+    price: '300.000 - 400.000',
+
+  },
+  {
+    id: 19,
+    name: 'Sân Trường Đại Học Phenikaa',
+    href: '#',
+    area: "Hà Đông",
+    people: "7",
+    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
+    price: '300.000 - 400.000',
+
+  },
+  {
+    id: 20,
+    name: 'Sân Trường Đại Học Phenikaa',
+    href: '#',
+    area: "Hà Đông",
+    people: "7",
+    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
+    price: '300.000 - 400.000',
+
+  },
+  {
+    id: 21,
+    name: 'Sân Trường Đại Học Phenikaa',
+    href: '#',
+    area: "Hà Đông",
+    people: "7",
+    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
+    price: '300.000 - 400.000',
+
+  },
+  {
+    id: 22,
+    name: 'Sân Trường Đại Học Phenikaa',
+    href: '#',
+    area: "Hà Đông",
+    people: "7",
+    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
+    price: '300.000 - 400.000',
+
+  },
+  {
+    id: 23,
+    name: 'Sân Trường Đại Học Phenikaa',
+    href: '#',
+    area: "Hà Đông",
+    people: "7",
+    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
+    price: '300.000 - 400.000',
+
+  },
+  {
+    id: 24,
+    name: 'Sân Trường Đại Học Phenikaa',
+    href: '#',
+    area: "Hà Đông",
+    people: "7",
+    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
+    price: '300.000 - 400.000',
+
+  },
+  {
+    id: 25,
+    name: 'Sân Trường Đại Học Phenikaa',
+    href: '#',
+    area: "Hà Đông",
+    people: "7",
+    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
+    price: '300.000 - 400.000',
+
+  },
 ]
 
-// const test = products.filter(item => item.area === "Hà Đông");
-// console.log(test);
-const isChecked = (value, column) => {
-  if (column === 'Region') {
-    return checkedRegion.value.includes(value) || citiesRegion.value.includes(value);
-  } else if (column === 'Price') {
-    return checkedPrice.value.includes(value) || citiesPrice.value.includes(value);
-  } else if (column === 'CourtType') {
-    return checkedCourtType.value.includes(value) || citiesCourtType.value.includes(value);
+
+const totalPages = computed(() => Math.ceil(filteredProducts.value.length / pageSize));
+
+const currentPageProducts = computed(() => {
+  const startIdx = (page.value - 1) * pageSize;
+  const endIdx = startIdx + pageSize;
+  return filteredProducts.value.slice(startIdx, endIdx);
+});
+const handlePageChange = (newPage) => {
+  page.value = newPage;
+};
+const isChecked = (value) => {
+  return checkedRegion.value.includes(value);
+};
+const updateChecked = (value) => {
+  if (isChecked(value)) {
+    checkedRegion.value = checkedRegion.value.filter(item => item !== value);
+  } else {
+    checkedRegion.value.push(value);
   }
 };
 
-// Hàm xử lý khi checkbox thay đổi
-const handleCheckedChange = (checked, column) => {
-  if (column === 'Region') {
-    checkedRegion.value = checked;
-  } else if (column === 'Price') {
-    checkedPrice.value = checked;
-  } else if (column === 'CourtType') {
-    checkedCourtType.value = checked;
-  }
-};
-
-// Hàm xử lý khi có thay đổi trong danh sách chọn (ví dụ: khi người dùng chọn các khu vực)
 const handleUpdateValue = (value, column) => {
   if (column === 'Region') {
     citiesRegion.value = value;
@@ -293,8 +394,7 @@ const handleUpdateValue = (value, column) => {
   }
 };
 
-// Hàm lọc sản phẩm dựa trên lựa chọn của người dùng
-const filterProducts = () => {
+const filterProducts = (column) => {
   filteredProducts.value = products.filter(product => {
     return (
       (citiesRegion.value.length === 0 || citiesRegion.value.includes(product.area)) &&
@@ -304,17 +404,15 @@ const filterProducts = () => {
   });
 };
 
-// Sử dụng watch để theo dõi các thay đổi trong danh sách chọn và kích hoạt hàm lọc
-watch([citiesRegion, citiesPrice, citiesCourtType], filterProducts);
-
-
-
-// Nạp dữ liệu vào filteredProducts khi component được mounted
-onMounted(() => {
-  filterProducts();
+watch([citiesRegion, citiesPrice, citiesCourtType, page], () => {
+  filterProducts('All');
 });
 
+onMounted(() => {
+  filterProducts('All');
+});
 </script>
+
 
 
 

@@ -16,12 +16,15 @@ import {
   faHeadphones,
   faFileInvoiceDollar,
   faFutbol,
+  faFilePen,
+  faSave,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faTwitter,
   faGooglePlus,
   faSquareInstagram,
   faFacebook,
+  
 } from "@fortawesome/free-brands-svg-icons";
 library.add(
   faLocationDot,
@@ -38,7 +41,9 @@ library.add(
   faTag,
   faHeadphones,
   faFileInvoiceDollar,
-  faFutbol
+  faFutbol,
+  faFilePen,
+  faSave
 );
 import { createRouter, createWebHistory } from "vue-router";
 import BookingBallLayout from "./components/DatSanBong/BookingBallLayout.vue";
@@ -48,7 +53,7 @@ import AboutUsVue from "./components/AboutUs.vue";
 import ThanhToanBall from "./components/ThanhToan/ThanhToanBall.vue";
 import Login from "./components/Account/Login.vue";
 import Register from "./components/Account/Register.vue";
-import UserProfile from "./components/Profile/UserProfile.vue";
+import UserProfile from "./components/Profile/Users/UserProfile.vue";
 
 const router = createRouter({
   history: createWebHistory(),
