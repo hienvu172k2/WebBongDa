@@ -52,6 +52,6 @@ const stats = [
   <style scoped>
 .wrapper {
     margin: auto;
-    padding:100px 0 3px 0;    
+    padding:0px 0 3px 0;    
 }
 </style>

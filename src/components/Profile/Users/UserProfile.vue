@@ -61,6 +61,7 @@ const userImage = ref({
   margin: auto;
   width: 1600px;
   max-width: 100%;
+  padding-top:50px ;
 }
 
 .menu {
@@ -74,7 +75,7 @@ const userImage = ref({
 .content {
   height: 800px;
   width: auto;
-  margin: 15px 10px 0 0;
+  margin-top: -35px;
 }
 
 .menu-up {

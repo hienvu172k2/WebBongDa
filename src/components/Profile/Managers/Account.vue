@@ -125,7 +125,7 @@ onMounted(() => {
 }
 
 .content ul {
-    padding: 30px;
+    padding-top:50px ;
 }
 
 .content ul li {

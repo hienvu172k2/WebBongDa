@@ -13,7 +13,5 @@ import FooterBall from './components/FooterBall.vue';
 
 </script>
 <style scoped>
-.bookingball {
-  padding-top: 130px;
-}
+
 </style>  

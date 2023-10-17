@@ -33,65 +33,21 @@
                     </n-table>
                     <div class="payment-methods">
                         <h1>Hình Thức Thanh Toán</h1>
-                        <div class="cash-banking">
-                            <label>
-                                <input type="checkbox" value="cash" v-model="cashSelected" class="input-checkbox"
-                                    @change="handleCheckboxChange('cash')" /> Tiền Mặt
-                            </label>
-                            <label>
-                                <input type="checkbox" value="banking" v-model="bankingSelected" class="input-checkbox"
-                                    @change="handleCheckboxChange('banking')" /> Banking
-                            </label>
-                        </div>
-    
-    
                         <div v-if="bankingSelected" style="display:flex;justify-content:center">
                             <img src="../../assets/images/qrthanhtoan.png" alt="Banking" style="width:50%;height:50%;" />
                         </div>
-                        <button @click="handlePayment">Thanh Toán</button>
-                        <div v-if="!isPaymentValid && paymentClicked" style="color: red;">Vui lòng chọn phương thức thanh
-                            toán !</div>
-                        <div v-if="isPaymentValid && paymentClicked" style="color :rgb(0, 218, 0)">Đặt sân thành công !
-                        </div>
+                        <router-link to="/bookedball"> <button @click="handlePayment">Xem Thông Tin Sân Đã
+                                Đặt</button></router-link>
                     </div>
-    
                 </n-gi>
-    
             </n-grid>
-    
         </div>
     </div>
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
-import { computed } from 'vue';
-const isPaymentSelected = ref(false);
-const paymentClicked = ref(false);
-const isPaymentValid = computed(() => {
-  return isPaymentSelected.value;
-});
-const cashSelected = ref(false);
-const bankingSelected = ref(false);
-
-function handlePayment() {
-  paymentClicked.value = true;
-  if (cashSelected.value || bankingSelected.value) {
-    isPaymentSelected.value = true;
-  } else {
-    isPaymentSelected.value = false;
-  }
-}
-watch(cashSelected, (newValue) => {
-  if (newValue) {
-    bankingSelected.value = false;
-  }
-});
-watch(bankingSelected, (newValue) => {
-  if (newValue) {
-    cashSelected.value = false;
-  }
-});
+import { ref } from 'vue';
+const bankingSelected = ref(true);
 const sanInfo = ref({
   "Tên": 'Sân Trường Đại Học Phenikaa',
   "Loại Sân": '6-7 người',
@@ -99,12 +55,12 @@ const sanInfo = ref({
   "Ngày": '05/10/2023',
   "Giờ": '5:30 - 7:00 ',
   "Giá Sân": '500.000/trận',
-
 })
 const infoImage = ref({
   anh: 'https://sanconhantao.vn/wp-content/uploads/2020/10/San-dai-hoc-Phenikaa-4.jpg',
 })
 </script>
+
 <style scoped>
 .wrapper {
     margin: auto;
@@ -175,24 +131,12 @@ const infoImage = ref({
 .payment-methods {
     width: 100%;
     height: 300px;
-
     text-align: center;
-
 }
 
 .payment-methods h1 {
     font-size: 20px;
     font-weight: 500;
-    padding: 10px;
-}
-
-.cash-banking {
-    height: 50px;
-    line-height: 50px;
-    font-size: 18px;
-}
-
-.cash-banking label {
     padding: 10px;
 }
 
@@ -206,11 +150,5 @@ const infoImage = ref({
     border: 1px solid #FA4516;
     color: #FA4516;
     cursor: pointer;
-}
-
-.input-checkbox {
-    margin: 0 5px;
-    cursor: pointer;
-
 }
 </style>

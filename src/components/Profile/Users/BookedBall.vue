@@ -1,13 +1,13 @@
 <template>
-    <div class="wrapper">
-        <h1>Thông Tin Sân Bạn Đã Đặt</h1>
-        <n-data-table :bordered="true" :single-line="true" :key="(row) => row.key" :columns="columns" :data="data" :pagination="paginationRef"
-            :on-update:page="handlePageChange" />
-    </div>
+  <div class="wrapper">
+    <h1>Thông Tin Sân Bạn Đã Đặt</h1>
+    <n-data-table :bordered="true" :single-line="true" :key="(row) => row.key" :columns="columns" :data="data"
+      :pagination="paginationRef" :on-update:page="handlePageChange" />
+  </div>
 </template>
   
 <script setup>
-import { ref, computed, h } from 'vue'
+import { ref, computed } from 'vue'
 
 const products = [
   {
@@ -60,7 +60,7 @@ const products = [
     price: '300.000'
   },
   {
-    stt: 8 ,
+    stt: 8,
     name: 'Sân bóng Trường Đại Học Phenikaa',
     address: 'Nguyễn Văn Trác, phường Yên Nghĩa, quận Hà Đông, thành phố Hà Nội',
     time: '7:00 - 8:30 (10/12/2023)',
@@ -87,14 +87,10 @@ const products = [
     time: '7:00 - 8:30 (10/12/2023)',
     price: '300.000'
   },
-  
+
 ]
 
 const data = ref(products);
-
-const getDataIndex = (key) => {
-  return data.value.findIndex((item) => item.stt === key);
-}
 
 const page = ref(1);
 
@@ -114,7 +110,7 @@ const columns = [
     key: 'stt',
     width: 70,
     align: 'center',
-    render(_,index) {
+    render(_, index) {
       return index + 1;
     }
   },
@@ -138,20 +134,23 @@ const columns = [
     title: 'Giá Sân',
     key: 'price',
     align: 'center',
-   
+
   }
 ];
 </script>
 
 <style scoped>
 .wrapper {
-    height: auto;
-    padding: 15px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  height: auto;
+  padding: 15px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding-bottom: 70px;
+
 }
+
 .wrapper h1 {
-    padding: 20px 10px;
-    font-size: 25px;
-    font-weight: 500;
+  padding: 20px 10px;
+  font-size: 25px;
+  font-weight: 500;
 }
 </style>

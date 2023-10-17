@@ -21,7 +21,7 @@ import {
   faArrowRight,
   faArrowLeft,
   faTrash,
-  faFloppyDisk
+  faFloppyDisk,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faTwitter,
@@ -49,7 +49,8 @@ library.add(
   faSave,
   faArrowRight,
   faArrowLeft,
-  faTrash,faFloppyDisk
+  faTrash,
+  faFloppyDisk
 );
 import { createRouter, createWebHistory } from "vue-router";
 import BookingBallLayout from "./components/DatSanBong/BookingBallLayout.vue";
@@ -62,6 +63,7 @@ import Register from "./components/Account/Register.vue";
 import UserProfile from "./components/Profile/Users/UserProfile.vue";
 import { NPagination } from "naive-ui";
 import ManageProfile from "./components/Profile/Managers/ManageProfile.vue";
+import BookedBall from "./components/Profile/Users/BookedBall.vue";
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -78,6 +80,10 @@ const router = createRouter({
     { path: "/register", component: Register },
     { path: "/user", component: UserProfile },
     { path: "/manage", component: ManageProfile },
+    {
+      path: "/bookedball",
+      component: BookedBall,
+    },
   ],
 });
 
