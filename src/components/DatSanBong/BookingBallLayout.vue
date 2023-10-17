@@ -1,5 +1,5 @@
 <template>
-  <div class="warraper">
+  <div class="wrapper">
     <div class="search-content shadow-xl bg-white rounded-lg">
       <n-grid cols="6">
         <n-grid-item span="3">
@@ -71,26 +71,28 @@
                 </h1>
               </div>
             </div>
-            <p class="text-sm  text-black-900">Khu Vực : {{ product.area }}</p>
-            <p class="text-sm  text-black-900">Sân : {{ product.people }}</p>
-            <p class="text-sm  text-black-900">Giá : {{ product.price }}/Trận</p>
+            <p class="text-sm text-black-900">Khu Vực : {{ product.area }}</p>
+            <p class="text-sm text-black-900">Sân : {{ product.people }}</p>
+            <p class="text-sm text-black-900">Giá : {{ product.price }}/Trận</p>
           </div>
         </div>
       </div>
     </div>
     <div class="pagination flex justify-center items-center">
-      <n-pagination v-model="page" :page-count="totalPages" @current-change="changePage" />
+      <button @click="prevPage" :disabled="page === 1"><font-awesome-icon class="icon-pagination" :icon="['fas', 'arrow-left']" /></button>
+      <span>Trang {{ page }}</span>
+      <button @click="nextPage" :disabled="page >= totalPages"><font-awesome-icon class="icon-pagination"
+          :icon="['fas', 'arrow-right']" /></button>
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted, computed } from 'vue';
-import { NPagination } from 'naive-ui';
 
-const filteredProducts = ref([]);
 const page = ref(1);
 const pageSize = 12;
+const filteredProducts = ref([]);
 
 const products = [
   {
@@ -221,27 +223,52 @@ const products = [
     imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
     price: '300.000 - 400.000',
 
+  }, {
+    id: 14,
+    name: 'Sân Trường Đại Học Phenikaa',
+    href: '#',
+    area: "Hà Đông",
+    people: "7",
+    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
+    price: '300.000 - 400.000',
+
+  },
+  {
+    id: 15,
+    name: 'Sân Trường Đại Học Phenikaa',
+    href: '#',
+    area: "Hà Đông",
+    people: "7",
+    imageSrc: 'https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg',
+    price: '300.000 - 400.000',
+
   },
 ]
 
+const totalPages = computed(() => Math.ceil(products.length / pageSize));
 
-const totalPages = computed(() => Math.ceil(filteredProducts.value.length / pageSize));
-
-const changePage = (newPage) => {
-  console.log("newPage", newPage)
-  page.value = newPage; v
+const prevPage = () => {
+  if (page.value > 1) {
+    page.value--;
+  }
 };
+
+const nextPage = () => {
+  if (page.value < totalPages.value) {
+    page.value++;
+  }
+};
+
 const currentPageProducts = computed(() => {
   const startIdx = (page.value - 1) * pageSize;
   const endIdx = startIdx + pageSize;
-  return filteredProducts.value.slice(startIdx, endIdx);
+  return products.slice(startIdx, endIdx);
 });
 
 onMounted(() => {
   filteredProducts.value = products;
 });
 </script>
-
 
 
 <style scoped>
@@ -291,5 +318,12 @@ onMounted(() => {
   border-bottom: 1px solid #000;
   font-size: 18px;
   font-weight: 650;
+}
+.icon-pagination{
+  padding: 0 10px;
+}
+.icon-pagination:hover{
+  font-size: 17px;
+  color:rgb(250, 69, 22);
 }
 </style>

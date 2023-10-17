@@ -34,6 +34,10 @@ const routes = [
         path: "user",
         component: () => import("../components/Profile/UserProfile.vue"),
       },
+      {
+        path:"manage",
+        component: () => import("../components/Profile/Managers/ManageProfile.vue")
+      }
     ],
   },
 ];

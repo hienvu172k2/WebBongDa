@@ -18,13 +18,16 @@ import {
   faFutbol,
   faFilePen,
   faSave,
+  faArrowRight,
+  faArrowLeft,
+  faTrash,
+  faFloppyDisk
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faTwitter,
   faGooglePlus,
   faSquareInstagram,
   faFacebook,
-  
 } from "@fortawesome/free-brands-svg-icons";
 library.add(
   faLocationDot,
@@ -43,7 +46,10 @@ library.add(
   faFileInvoiceDollar,
   faFutbol,
   faFilePen,
-  faSave
+  faSave,
+  faArrowRight,
+  faArrowLeft,
+  faTrash,faFloppyDisk
 );
 import { createRouter, createWebHistory } from "vue-router";
 import BookingBallLayout from "./components/DatSanBong/BookingBallLayout.vue";
@@ -54,7 +60,8 @@ import ThanhToanBall from "./components/ThanhToan/ThanhToanBall.vue";
 import Login from "./components/Account/Login.vue";
 import Register from "./components/Account/Register.vue";
 import UserProfile from "./components/Profile/Users/UserProfile.vue";
-import { NPagination } from 'naive-ui';
+import { NPagination } from "naive-ui";
+import ManageProfile from "./components/Profile/Managers/ManageProfile.vue";
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -70,10 +77,11 @@ const router = createRouter({
     { path: "/login", component: Login },
     { path: "/register", component: Register },
     { path: "/user", component: UserProfile },
+    { path: "/manage", component: ManageProfile },
   ],
 });
 
-const app = createApp(App); 
+const app = createApp(App);
 app.component("font-awesome-icon", FontAwesomeIcon);
 app.use(naive);
 app.use(router);

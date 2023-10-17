@@ -84,13 +84,15 @@
                                     Profile
                                 </li>
                             </router-link>
-                            <li>
+                            <router-link to="/manage">
+                                <li>
                                 <a href="#" class="menu-item">
                                     <font-awesome-icon :icon="['fas', 'arrow-right-from-bracket']" class="icon" />
     
                                 </a>
                                 Logout
                             </li>
+                            </router-link>
                         </ul>
                     </div>
                 </div>

@@ -24,6 +24,8 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
+    "@vitejs/plugin-vue-jsx": "^3.0.2",
+    "@vue/babel-preset-jsx": "^1.4.0",
     "autoprefixer": "^10.4.15",
     "naive-ui": "^2.35.0",
     "postcss": "^8.4.30",
