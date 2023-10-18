@@ -33,18 +33,21 @@ const routes = [
       {
         path: "user",
         component: () => import("../components/Profile/UserProfile.vue"),
-        children:[
+        children: [
           {
-            path:"bookedball",
-            component:() => import("../components/Profile/Users/BookedBall.vue"),
-            
-          }
-        ]
+            path: "bookedball",
+            component: () =>
+              import("../components/Profile/Users/BookedBall.vue"),
+          },
+        ],
       },
       {
-        path:"manage",
-        component: () => import("../components/Profile/Managers/ManageProfile.vue")
-      }
+        path: "manage",
+      },
+      {
+        path: "contact",
+        component: () => import("../components/ConTact.vue"),
+      },
     ],
   },
 ];

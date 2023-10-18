@@ -4,9 +4,9 @@
       <h1>Chỉnh Sửa Sân</h1>
       <div class="sua-header">
         <span>Tên</span>
-        <input v-model="editedSan.name" type="text" placeholder=" Tên Sân">
+        <input v-model="editedSan.name" type="text" placeholder="Tên Sân">
         <span>Địa Chỉ</span>
-        <input v-model="editedSan.address" type="text" placeholder=" Địa Chỉ Sân">
+        <input v-model="editedSan.address" type="text" placeholder="Địa Chỉ Sân">
       </div>
       <div class="sua-anh">
         <div class="col-span-full">
@@ -33,25 +33,24 @@
               Sân</label>
             <div class="mt-2">
               <textarea id="about" name="about" rows="3"
-                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
             </div>
           </div>
           <div class="col-span-full">
             <label for="about" class="block text-sm font-medium leading-6 text-gray-900">Giá Thuê</label>
             <div class="mt-2">
               <textarea id="about" name="about" rows="3"
-                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
             </div>
           </div>
           <div class="col-span-full">
             <label for="about" class="block text-sm font-medium leading-6 text-gray-900">Cách Thức Di Chuyển</label>
             <div class="mt-2">
               <textarea id="about" name="about" rows="3"
-                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
             </div>
           </div>
         </form>
-  
       </div>
       <div class="mt-6 flex items-center justify-end gap-x-6">
         <button @click="selectedTab = 'quan-ly-san'" type="button"
@@ -59,6 +58,12 @@
         <button @click="saveEditedSan" type="button"
           class="btn-quanlysan rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
       </div>
+    </div>
+    <div v-else-if="showViewContent">
+      <n-message-provider>
+        <ViewSanBong />
+      </n-message-provider>
+      <button @click="showViewContent = false">Đóng</button>
     </div>
     <div v-else>
       <h1>Quản Lý Sân</h1>
@@ -77,6 +82,12 @@
             <td>{{ san.name }}</td>
             <td>{{ san.address }}</td>
             <td>
+              <button class="btn-xem" @click="showViewContent = true; viewData = san">
+                <font-awesome-icon :icon="['fas', 'eye']" />
+              </button>
+              <dialog v-if="showDialog" @close="showDialog = false">
+                <input class="date-time" type="date" v-model="selectedDate" />
+              </dialog>
               <button class="btn-sua" @click="editSan(san.stt)">
                 <font-awesome-icon :icon="['fas', 'file-pen']" />
               </button>
@@ -85,7 +96,6 @@
           </tr>
         </tbody>
       </table>
-  
       <div class="pagination">
         <button @click="prevPage" :disabled="currentPage === 1"><font-awesome-icon class="icon-pagination"
             :icon="['fas', 'arrow-left']" /></button>
@@ -93,8 +103,7 @@
         <button @click="nextPage" :disabled="currentPage * 10 >= data.length"><font-awesome-icon class="icon-pagination"
             :icon="['fas', 'arrow-right']" /></button>
       </div>
-  
-      <button class="btn-add" @click="addSan"> Thêm Sân </button>
+      <button class="btn-add" @click="addSan">Thêm Sân</button>
       <div v-if="showAddForm" class="add-san">
         <h2>Thêm Sân Mới</h2>
         <form @submit.prevent="saveSan" class="form-container">
@@ -102,25 +111,27 @@
             <input v-model="newSan.name" placeholder="Tên Sân" @input="validateName" />
             <p class="error">{{ formErrors.name }}</p>
           </div>
-  
           <div class="input-container">
             <input v-model="newSan.address" placeholder="Địa Chỉ" @input="validateAddress" />
             <p class="error">{{ formErrors.address }}</p>
           </div>
-  
           <div class="button-container">
             <button class="btn-luu" type="submit"><font-awesome-icon :icon="['fas', 'floppy-disk']" /></button>
           </div>
         </form>
       </div>
     </div>
+  
   </div>
 </template>
   
 <script setup>
 import { ref, computed } from 'vue';
+import ViewSanBong from "./ViewSanBong.vue";
 const selectedTab = ref("quan-ly-san");
-
+const showDialog = ref(false);
+const showViewContent = ref(false);
+const viewData = ref(null);
 const data = ref([
   {
     stt: 1,
@@ -386,6 +397,15 @@ button {
   color: rgb(250, 69, 22);
 }
 
+.btn-xem {
+  padding: 1px 3px;
+  margin: 0px 3px;
+}
+
+.btn-xem:hover {
+  color: rgb(250, 69, 22);
+}
+
 .btn-add {
   padding: 5px 10px;
   margin: 15px 0px;
@@ -481,7 +501,7 @@ button {
   height: 200px;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 10px 20px 10px 0px;
 }
 
 .sua-header span {
@@ -492,10 +512,10 @@ button {
 
 .sua-header input {
   border: 1px solid #ccc;
-  border-radius: 0.3rem;
+  border-radius: 0.375rem;
   margin: 10px;
-  padding: 2px;
-  width: 500px;
+  padding: 8px 5px;
+  width: 100%;
 }
 
 .block {
@@ -519,5 +539,32 @@ button {
 
 .col-span-full {
   padding: 10px 0px;
+}
+
+.date-time {
+  padding: 5px;
+  border-radius: 0.375rem;
+  font-size: 50px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+dialog input {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 </style>

@@ -25,7 +25,9 @@
                         Sân</router-link>
                     <router-link to="/aboutus" class="header-btn text-sm font-semibold leading-6 text-gray-900">Liên
                         Hệ</router-link>
-                    <a href="#" class="header-btn text-sm font-semibold leading-6 text-gray-900">Hỗ Trợ</a>
+                    <router-link to="/contact" class="header-btn text-sm font-semibold leading-6 text-gray-900">Hỗ
+                        Trợ</router-link>
+    
                 </PopoverGroup>
                 <div class="hidden lg:flex lg:flex-1 lg:justify-end">
     
@@ -102,7 +104,7 @@ import {
 
 .header-content {
     box-shadow: 0 1px 8px 3px #ccc;
-    
+
 }
 
 .header-btn:hover {

@@ -4,24 +4,7 @@ import App from "./App.vue";
 import naive from "naive-ui";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import {
-  faLocationDot,
-  faEnvelope,
-  faPhone,
-  faCreditCard,
-  faUser,
-  faArrowRightFromBracket,
-  faUserPen,
-  faTag,
-  faHeadphones,
-  faFileInvoiceDollar,
-  faFutbol,
-  faFilePen,
-  faSave,
-  faArrowRight,
-  faArrowLeft,
-  faTrash,
-  faFloppyDisk,
+import {faLocationDot,faEnvelope,faPhone,faCreditCard,faUser,faArrowRightFromBracket,faUserPen,faTag,faHeadphones,faFileInvoiceDollar,faFutbol,faFilePen,faSave,faArrowRight,faArrowLeft,faTrash,faFloppyDisk,faEye
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faTwitter,
@@ -50,7 +33,8 @@ library.add(
   faArrowRight,
   faArrowLeft,
   faTrash,
-  faFloppyDisk
+  faFloppyDisk,
+  faEye
 );
 import { createRouter, createWebHistory } from "vue-router";
 import BookingBallLayout from "./components/DatSanBong/BookingBallLayout.vue";
@@ -64,6 +48,9 @@ import UserProfile from "./components/Profile/Users/UserProfile.vue";
 import { NPagination } from "naive-ui";
 import ManageProfile from "./components/Profile/Managers/ManageProfile.vue";
 import BookedBall from "./components/Profile/Users/BookedBall.vue";
+import ConTact from "./components/ConTact.vue";
+import { create } from "naive-ui";
+
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -80,16 +67,15 @@ const router = createRouter({
     { path: "/register", component: Register },
     { path: "/user", component: UserProfile },
     { path: "/manage", component: ManageProfile },
-    {
-      path: "/bookedball",
-      component: BookedBall,
-    },
+    { path: "/bookedball", component: BookedBall },
+    { path: "/contact", component: ConTact },
   ],
 });
 
 const app = createApp(App);
 app.component("font-awesome-icon", FontAwesomeIcon);
 app.use(naive);
+app.use(create());
 app.use(router);
 app.mount("#app");
 app.component(NPagination.name, NPagination);

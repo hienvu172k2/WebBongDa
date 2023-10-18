@@ -315,12 +315,13 @@ const schedules = [
 .css-content-datetime p {
     padding-top: 5px;
 }
-.header-datsan{
-    display:flex;
+
+.header-datsan {
+    display: flex;
     justify-content: center;
-    font-size:20px;
-    padding-top:30px;
-    font-weight:600;
-    
+    font-size: 20px;
+    padding-top: 30px;
+    font-weight: 600;
+
 }
 </style>    
