@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <TheHeader />
-    <router-view class="bookingball" />
+    <router-view />
     <FooterBall />
   </div>
 </template>

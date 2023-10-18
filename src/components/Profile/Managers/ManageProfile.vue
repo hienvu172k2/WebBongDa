@@ -63,7 +63,7 @@ const userImage = ref({
   margin: auto;
   width: 1600px;
   max-width: 100%;
-  padding-top:50px ;
+  margin-top:50px ;
 }
 
 .menu {
