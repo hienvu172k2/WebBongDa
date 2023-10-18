@@ -121,15 +121,11 @@ const selectedTime = ref('');
 const isFormValid = ref(true);
 
 const submitDateTime = () => {
-  // Kiểm tra xem đã chọn ngày và giờ hay chưa
   if (selectedDate.value && selectedTime.value) {
-    // Thực hiện xử lý với selectedDate.value và selectedTime.value
     console.log("Ngày đã chọn:", selectedDate.value);
     console.log("Giờ đã chọn:", selectedTime.value);
-    // Đặt biến isFormValid thành true nếu dữ liệu hợp lệ
     isFormValid.value = true;
   } else {
-    // Hiện thông báo lỗi và đặt isFormValid thành false
     console.log("Vui lòng chọn ngày và giờ trước khi đặt sân.");
     isFormValid.value = false;
   }
