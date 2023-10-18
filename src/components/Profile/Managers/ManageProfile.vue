@@ -64,10 +64,11 @@ const userImage = ref({
   width: 1600px;
   max-width: 100%;
   margin-top:50px ;
+  margin-bottom: 50px;
 }
 
 .menu {
-  height: 700px;
+  height: 600px;
   width: 250px;
   max-width: 100%;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);

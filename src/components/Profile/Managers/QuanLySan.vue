@@ -62,8 +62,8 @@
     <div v-else-if="showViewContent">
       <n-message-provider>
         <ViewSanBong />
+        <button class="btn-close" @click="showViewContent = false">Đóng</button>
       </n-message-provider>
-      <button @click="showViewContent = false">Đóng</button>
     </div>
     <div v-else>
       <h1>Quản Lý Sân</h1>
@@ -411,6 +411,18 @@ button {
   margin: 15px 0px;
   border: 1px solid #ccc;
   border-radius: 0.3rem;
+}
+
+.btn-close {
+  padding: 5px 10px;
+  margin: 15px 0px;
+  border: 1px solid #ccc;
+  border-radius: 0.3rem;
+}
+
+.btn-close:hover {
+  background-color: rgb(250, 69, 22);
+  color: #fff;
 }
 
 .btn-add:hover {
