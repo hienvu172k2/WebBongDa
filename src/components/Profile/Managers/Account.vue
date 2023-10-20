@@ -25,7 +25,8 @@
                 </n-gi>
             </n-grid>
             <div class="btn-edit">
-                <button @click="startEditing" type="button" class="button-edit"><font-awesome-icon :icon="['fas', 'file-pen']" class="edit-save-icon" /> Edit</button>
+                <button @click="startEditing" type="button" class="button-edit"><font-awesome-icon
+                        :icon="['fas', 'file-pen']" class="edit-save-icon" /> Edit</button>
             </div>
         </div>
     
@@ -55,7 +56,8 @@
             </n-grid>
     
             <div class="btn-save">
-                <button @click="saveEditing" type="button" class="button-save"><font-awesome-icon icon="floppy-disk" class="edit-save-icon"  /> Save</button>
+                <button @click="saveEditing" type="button" class="button-save"><font-awesome-icon icon="floppy-disk"
+                        class="edit-save-icon" /> Save</button>
             </div>
         </div>
     </div>
@@ -112,6 +114,7 @@ onMounted(() => {
     font-size: 30px;
     font-weight: 500;
     padding: 20px 30px 0px 30px;
+    text-align: center;
 }
 
 .content {
@@ -125,7 +128,7 @@ onMounted(() => {
 }
 
 .content ul {
-    padding-top:50px ;
+    padding-top: 50px;
 }
 
 .content ul li {
@@ -143,7 +146,7 @@ onMounted(() => {
 
 .button-edit:hover {
     background-color: #FA4516;
-    color:#fff;
+    color: #fff;
 
 }
 
@@ -170,7 +173,7 @@ onMounted(() => {
 
 .button-save:hover {
     background-color: #FA4516;
-    color: #fff ;
+    color: #fff;
 
 }
 
@@ -183,8 +186,8 @@ onMounted(() => {
 .edit-ul li {
     margin: 1.8px;
 }
-.edit-save-icon{
-    color: #000 ;
-}
 
+.edit-save-icon {
+    color: #000;
+}
 </style>

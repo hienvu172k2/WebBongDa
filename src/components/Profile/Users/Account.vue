@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
+        <h1>Thông Tin Tài Khoản</h1>
         <div v-if="!isEditing" class="content">
-            <h1>Thông Tin Tài Khoản</h1>
             <n-grid cols="4">
                 <n-gi span="1">
                     <ul>
@@ -25,7 +25,8 @@
                 </n-gi>
             </n-grid>
             <div class="btn-edit">
-                <button @click="startEditing" type="button" class="button-edit"><font-awesome-icon :icon="['fas', 'file-pen']" class="edit-save-icon" /> Edit</button>
+                <button @click="startEditing" type="button" class="button-edit"><font-awesome-icon
+                        :icon="['fas', 'file-pen']" class="edit-save-icon" /> Edit</button>
             </div>
         </div>
     
@@ -55,7 +56,8 @@
             </n-grid>
     
             <div class="btn-save">
-                <button @click="saveEditing" type="button" class="button-save"><font-awesome-icon icon="floppy-disk" class="edit-save-icon"  /> Save</button>
+                <button @click="saveEditing" type="button" class="button-save"><font-awesome-icon icon="floppy-disk"
+                        class="edit-save-icon" /> Save</button>
             </div>
         </div>
     </div>
@@ -106,16 +108,18 @@ onMounted(() => {
 <style scoped>
 .wrapper {
     height: 800px;
+
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 .wrapper h1 {
     font-size: 30px;
-    font-weight: 500;
+  font-weight: 500;
     padding: 20px 30px 0px 30px;
+    text-align: center;
 }
 
 .content {
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     height: 550px;
 }
 
@@ -143,7 +147,7 @@ onMounted(() => {
 
 .button-edit:hover {
     background-color: #FA4516;
-    color:#fff;
+    color: #fff;
 
 }
 
@@ -170,7 +174,7 @@ onMounted(() => {
 
 .button-save:hover {
     background-color: #FA4516;
-    color: #fff ;
+    color: #fff;
 
 }
 
@@ -183,8 +187,8 @@ onMounted(() => {
 .edit-ul li {
     margin: 1.8px;
 }
-.edit-save-icon{
-    color: #000 ;
-}
 
+.edit-save-icon {
+    color: #000;
+}
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
-    <div class="search-content shadow-xl bg-white rounded-lg">
-      <n-grid cols="6">
+    <div class="search-content shadow-xl bg-white rounded-lg p-4 lg:p-12">
+      <n-grid cols="6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
         <n-grid-item span="3">
           <div class="filter flex justify-center items-center">
             <div>
@@ -52,9 +52,9 @@
     </div>
   
     <div class="bg-white">
-      <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-        <h2 class="text-2xl font-bold tracking-tight text-gray-900">Sân Bóng Đá</h2>
-        <div class="mt-6 grid gap-x-5 gap-y-5 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-5">
+      <div class="mx-auto max-w-full px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        <h2 class="text-2xl font-bold tracking-tight text-gray-900 text-center">Sân Bóng Đá</h2>
+        <div class="mt-6 grid gap-4 sm:gap-5 lg:grid-cols-2 xl:grid-cols-4">
           <div v-for="product in currentPageProducts" :key="product.id" class="group relative">
             <div
               class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
@@ -78,7 +78,7 @@
         </div>
       </div>
     </div>
-    <div class="pagination flex justify-center items-center">
+    <div class="pagination flex justify-center items-center p-4 lg:p-8">
       <button @click="prevPage" :disabled="page === 1"><font-awesome-icon class="icon-pagination" :icon="['fas', 'arrow-left']" /></button>
       <span>Trang {{ page }}</span>
       <button @click="nextPage" :disabled="page >= totalPages"><font-awesome-icon class="icon-pagination"

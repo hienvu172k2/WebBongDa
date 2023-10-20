@@ -150,7 +150,8 @@ const columns = [
 
 .wrapper h1 {
   padding: 20px 10px;
-  font-size: 25px;
+  font-size: 30px;
   font-weight: 500;
+  text-align: center;
 }
 </style>

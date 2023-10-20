@@ -10,10 +10,10 @@
                 </div>
             </n-gi>
             <n-gi span="2" class="table-san">
+              <h1>Lịch Sân</h1>
                 <div>
                     <table class="custom-table" v-show="selectedDate">
                         <tr>
-                            <th>STT</th>
                             <th>Giờ</th>
                             <th>Số Sân</th>
                             <th>Giá Tiền</th>
@@ -21,7 +21,6 @@
                         </tr>
                         <tr v-for="(item, index) in selectedInfo" :key="index"
                             :class="{'row-red': item.status === 'Đã Đặt', 'row-green': item.status === 'Còn Trống'}">
-                            <td>{{ index + 1 }}</td>
                             <td>{{ item.hour }}</td>
                             <td>{{ item.court }}</td>
                             <td>{{ item.price }}</td>
@@ -52,17 +51,17 @@ const handleUpdateValue = (_, { year, month, date }) => {
 
 const infoByDate = ref({
   '2023-10-1': [
-    { hour: '5:30 - 7:00', court: 1, price: 100.000, status: "Đã Đặt" },
-    { hour: "7:00 - 8:30", court: 2, price: 300.000, status: "Còn Trống" },
-    { hour: "8:30 - 10:00", court: 3, price: 400.000, status: "Còn Trống" },
-    { hour: "13:00 - 14:30", court: 4, price: 900.000, status: "Đã Đặt" },
-    { hour: "14:30 - 16:00", court: 1, price: 800.000, status: "Còn Trống" },
-    { hour: "16:00 - 17:30", court: 2, price: 200.000, status: "Đã Đặt" },
-    { hour: "17:30 - 19:00", court: 3, price: 500.000, status: "Còn Trống" },
-    { hour: "19:00 - 20:30", court: 4, price: 100.000, status: "Còn Trống" },
-    { hour: "20:30 - 22:00", court: 1, price: 700.000, status: "Đã Đặt" },
-    { hour: "22:00 - 23:30", court: 2, price: 500.000, status: "Còn Trống" },
-    { hour: "23:30 - 1:00 sáng", court: 3, price: 400.000, status: "Còn Trống" },
+    { hour: '5:30 - 7:00', court: 1, price: "100.000", status: "Đã Đặt" },
+    { hour: "7:00 - 8:30", court: 2, price: "300.000", status: "Còn Trống" },
+    { hour: "8:30 - 10:00", court: 3, price: "400.000", status: "Còn Trống" },
+    { hour: "13:00 - 14:30", court: 4, price: "900.000", status: "Đã Đặt" },
+    { hour: "14:30 - 16:00", court: 1, price: "800.000", status: "Còn Trống" },
+    { hour: "16:00 - 17:30", court: 2, price: "200.000", status: "Đã Đặt" },
+    { hour: "17:30 - 19:00", court: 3, price: "500.000", status: "Còn Trống" },
+    { hour: "19:00 - 20:30", court: 4, price: '100.000', status: "Còn Trống" },
+    { hour: "20:30 - 22:00", court: 1, price: "700.000", status: "Đã Đặt" },
+    { hour: "22:00 - 23:30", court: 2, price: "500.000", status: "Còn Trống" },
+    { hour: "23:30 - 1:00 sáng", court: 3, price: "400.000", status: "Còn Trống" },
 
   ],
   '2023-10-2': [
@@ -231,10 +230,12 @@ watch(selectedDate, (newSelectedDate) => {
 
 }
 
-/* .custom-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-} */
 .table-san{
     margin:0px 10px 0px 10px;
+}
+.table-san h1{
+  font-size:30px;
+  font-weight: 500;
+  padding: 10px;
 }
 </style>

@@ -37,7 +37,7 @@
           <Account />
         </div>
         <div v-if="selectedTab === 'bookings'"> <BookedBall/> </div>
-        <div v-if="selectedTab === 'transactions'">Nội dung Lịch Sử Giao Dịch</div>
+        <div v-if="selectedTab === 'transactions'"><LichSuGiaoDich/></div>
         <div v-if="selectedTab === 'promotions'">Nội dung Ưu Đãi Và Khuyến Mãi</div>
         <div v-if="selectedTab === 'support'">Nội dung Hỗ Trợ</div>
       </n-gi>
@@ -49,6 +49,7 @@
 import { ref } from "vue";
 import Account from "./Account.vue"
 import BookedBall from "./BookedBall.vue"
+import LichSuGiaoDich from "./LichSuGiaoDich.vue";
 const selectedTab = ref("account");
 const userImage = ref({
   url: "https://th.bing.com/th/id/OIP.Fogk0Q6C7GEQEdVyrbV9MwHaHa?pid=ImgDet&rs=1"
@@ -69,13 +70,13 @@ const userImage = ref({
   width: 250px;
   max-width: 100%;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  margin: 15px 10px 0 0;
+  margin: 0px 10px 0 0;
 }
 
 .content {
   height: 800px;
   width: auto;
-  margin-top: -35px;
+  
 }
 
 .menu-up {
