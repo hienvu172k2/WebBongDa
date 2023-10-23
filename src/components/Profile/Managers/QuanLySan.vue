@@ -309,7 +309,6 @@ const saveEditedSan = () => {
 }
 
 .wrapper {
-  height: auto;
   padding: 15px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   font-family: Arial, sans-serif;
@@ -561,23 +560,4 @@ button {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
-dialog {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-}
-
-dialog input {
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
 </style>
