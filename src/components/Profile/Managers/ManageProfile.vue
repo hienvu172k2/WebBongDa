@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
-    <n-grid cols="6">
-      <n-gi span="1" class="menu">
+    <n-grid cols="1 s:1 m:1 l:8 xl:8" responsive="screen" x-gap="20" y-gap="20">
+      <n-gi span="2" class="menu">
         <div class="menu-up">
           <img :src="userImage.url" alt="">
           <h1>Vũ Văn Hiến</h1>
@@ -32,7 +32,7 @@
           </ul>
         </div>
       </n-gi>
-      <n-gi span="5" class="content">
+      <n-gi span="6" class="content">
         <div v-if="selectedTab === 'account'">
           <Account />
         </div>
@@ -68,8 +68,6 @@ const userImage = ref({
 }
 
 .menu {
-  height: 600px;
-  width: 250px;
   max-width: 100%;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   margin: 15px 10px 0 0;
@@ -111,16 +109,14 @@ const userImage = ref({
 
 .menu-down {
   padding: 10px;
-  width: 100%;
   height: auto;
 }
 
 .menu-down ul li {
   padding: 10px 10px;
   cursor: pointer;
-  max-width: 250px;
+  max-width: 370px;
   white-space: nowrap;
-  /* Ngăn nội dung xuống dòng */
 }
 
 .menu-down ul li:hover {

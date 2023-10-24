@@ -1,151 +1,114 @@
 <template>
-  <div class="waraper">
-    <div class="header">
-      <h1>Sân Trường Đại Học Phenikaa</h1>
-      <h2>
-        <font-awesome-icon icon="location-dot" /> Nguyễn Văn Trác, Hà Đông, Hà
-        Nội
+  <div class="all">
+    <div class="header md:p-10 lg:p-20">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold">Sân Trường Đại Học Phenikaa</h1>
+      <h2 class="mt-4 md:mt-6 lg:mt-10">
+        <font-awesome-icon icon="location-dot" /> Nguyễn Văn Trác, Hà Đông, Hà Nội
       </h2>
-      <n-carousel
-        effect="card"
-        prev-slide-style="transform: translateX(-150%) translateZ(-800px);"
-        next-slide-style="transform: translateX(50%) translateZ(-800px);"
-        style="height: 500px"
-        :show-dots="false"
-      >
-        <n-carousel-item :style="{ width: '60%' }">
-          <img
-            class="carousel-img"
-            src="https://phenikaa-uni.edu.vn:3600/fs/vi/san-bong-nha-da-nang-va-khu-the-chat/sb1.jpg"
-          />
+      <n-carousel effect="card" prev-slide-style="transform: translateX(-150%) translateZ(-800px);"
+        next-slide-style="transform: translateX(50%) translateZ(-800px);" style="height: 600px" :show-dots="false">
+        <n-carousel-item :style="{ width: '80%' }">
+          <img class="carousel-img"
+            src="https://phenikaa-uni.edu.vn:3600/fs/vi/san-bong-nha-da-nang-va-khu-the-chat/sb1.jpg" />
         </n-carousel-item>
-        <n-carousel-item :style="{ width: '60%' }">
-          <img
-            class="carousel-img"
-            src="https://sanconhantao.vn/wp-content/uploads/2020/10/San-dai-hoc-Phenikaa-4.jpg"
-          />
+        <n-carousel-item :style="{ width: '80%' }">
+          <img class="carousel-img" src="https://sanconhantao.vn/wp-content/uploads/2020/10/San-dai-hoc-Phenikaa-4.jpg" />
         </n-carousel-item>
-        <n-carousel-item :style="{ width: '60%' }">
-          <img
-            class="carousel-img"
-            src="https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg"
-          />
+        <n-carousel-item :style="{ width: '80%' }">
+          <img class="carousel-img"
+            src="https://thegioithethao.vn/images/products_soccer/2021/01/28/large/san-bong-dai-hoc-phenika_1611847506.jpg" />
         </n-carousel-item>
-        <n-carousel-item :style="{ width: '60%' }">
-          <img
-            class="carousel-img"
-            src="https://th.bing.com/th/id/OIP.O6gVWOI4AqvFSdbu9pZEMAHaHa?pid=ImgDet&w=1024&h=1024&rs=1"
-          />
+        <n-carousel-item :style="{ width: '80%' }">
+          <img class="carousel-img"
+            src="https://th.bing.com/th/id/OIP.O6gVWOI4AqvFSdbu9pZEMAHaHa?pid=ImgDet&w=1024&h=1024&rs=1" />
         </n-carousel-item>
       </n-carousel>
     </div>
-    <div class="content-detail">
-      <div class="detail-1">
-        <h1>Mô Tả Sân</h1>
-      </div>
-      <div class="detail">
-        <div class="detail-2">
-          <ul>
-            <span class="detail-header"
-              >Cơ Sở Vật Chất Và Tiện Ích Tại Sân</span
-            >
-            <li
-              class="detail-content"
-              v-for="(item, index) in facilities"
-              :key="index"
-            >
-              {{ item.text }}
-            </li>
-          </ul>
-          <ul>
-            <span class="detail-header">Giá Thuê</span>
-            <li
-              class="detail-content"
-              v-for="(item, index) in prices"
-              :key="index"
-            >
-              {{ item.text }}
-            </li>
-          </ul>
-          <ul>
-            <span class="detail-header">Cách Thức Di Chuyển</span>
-            <li
-              class="detail-content"
-              v-for="(item, index) in transportation"
-              :key="index"
-            >
-              <span v-if="item.text">{{ item.text }}</span>
-              <span v-if="item.iframe">
-                <iframe
-                  :src="item.iframe.src"
-                  :width="item.iframe.width"
-                  :height="item.iframe.height"
-                  :style="item.iframe.style"
-                  :allowfullscreen="item.iframe.allowfullscreen"
-                  :loading="item.iframe.loading"
-                  :referrerpolicy="item.iframe.referrerpolicy"
-                ></iframe>
-              </span>
-            </li>
-          </ul>
+    <div class="waraper md:p-10 lg:p-20">
+      <div class="content-detaill p-4 sm:p-8 md:p-10 lg:p-20 sm:w-1/2">
+        <div class="detail-1">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-semibold">Mô Tả Sân</h1>
+        </div>
+        <div class="">
+          <div class="detail-2">
+            <ul>
+              <span class="detail-header">Cơ Sở Vật Chất Và Tiện Ích Tại Sân</span>
+              <li class="detail-content" v-for="(item, index) in facilities" :key="index">
+                {{ item.text }}
+              </li>
+            </ul>
+            <ul>
+              <span class="detail-header">Giá Thuê</span>
+              <li class="detail-content" v-for="(item, index) in prices" :key="index">
+                {{ item.text }}
+              </li>
+            </ul>
+            <ul>
+              <span class="detail-header">Cách Thức Di Chuyển</span>
+              <li class="detail-content" v-for="(item, index) in transportation" :key="index">
+                <span v-if="item.text">{{ item.text }}</span>
+  
+                <span v-if="item.iframe" class="relative flex justify-center">
+                  <iframe :src="item.iframe.src" :width="item.iframe.width" :height="item.iframe.height"
+                    :style="item.iframe.style" :allowfullscreen="item.iframe.allowfullscreen"
+                    :loading="item.iframe.loading" :referrerpolicy="item.iframe.referrerpolicy"></iframe>
+                </span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-
-    <!-- Phần Lịch Sân -->
-    <div class="content-detail">
-      <div class="detail-11">
-        <h1>Lịch Sân</h1>
-      </div>
-      <div class="content-time">
-        <n-table :bordered="true" :single-line="false">
-          <thead>
-            <tr>
-              <th class="status-header">Thời gian</th>
-              <th class="status-header">Tình trạng</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(schedule, index) in schedules" :key="index">
-              <td
-                class="status-header"
-                :class="{
-                  'red-cell': schedule.status === 'Đã Đặt',
-                  'green-cell': schedule.status === 'Còn Trống',
-                }"
-              >
-                {{ schedule.time }}
-              </td>
-              <td
-                class="status-header"
-                :class="{
-                  'red-cell': schedule.status === 'Đã Đặt',
-                  'green-cell': schedule.status === 'Còn Trống',
-                }"
-              >
-                {{ schedule.status }}
-              </td>
-            </tr>
-          </tbody>
-        </n-table>
-      </div>
-    </div>
-
-    <!-- Phần Đặt Sân -->
-    <div class="content-detail">
-      <div class="css-content-datetime">
-        <span class="header-datsan">Đặt Sân Tại Đây</span>             b
-        <div class="content-datetime">
-          <input class="date-time" type="date" v-model="selectedDate" />
-          <input class="date-time" type="time" v-model="selectedTime" />
-
-          <router-link to="/thanhtoanball">
-            <button class="bt-datsan" @click="submitDateTime">Đặt Sân</button>
-          </router-link>
+  
+      <!-- Phần Lịch Sân -->
+      <div class="content-detail">
+        <div class="detail-11">
+          <h1>Lịch Sân</h1>
         </div>
-        <p v-if="!isFormValid" style="color: red; padding-left: 140px">
-          Vui lòng chọn ngày và giờ trước khi đặt sân.
-        </p>
+        <div class="content-time">
+          <n-table :bordered="true" :single-line="false">
+            <thead>
+              <tr>
+                <th class="status-header">Thời gian</th>
+                <th class="status-header">Tình trạng</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(schedule, index) in schedules" :key="index">
+                <td class="status-header" :class="{
+                                                            'red-cell': schedule.status === 'Đã Đặt',
+                                                            'green-cell': schedule.status === 'Còn Trống',
+                                                          }">
+                  {{ schedule.time }}
+                </td>
+                <td class="status-header" :class="{
+                                                            'red-cell': schedule.status === 'Đã Đặt',
+                                                            'green-cell': schedule.status === 'Còn Trống',
+                                                          }">
+                  {{ schedule.status }}
+                </td>
+              </tr>
+            </tbody>
+          </n-table>
+        </div>
+      </div>
+  
+      <!-- Phần Đặt Sân -->
+      <div class="content-detailll">
+        <div class="css-content-datetime flex items-center justify-center">
+          <div class="header-datsan-container flex items-center">
+            <span class="header-datsan text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">Đặt Sân Tại Đây</span>
+          </div>
+          <div class="content-datetime flex items-center justify-center">
+            <input class="date-time" type="date" v-model="selectedDate" />
+            <input class="date-time" type="time" v-model="selectedTime" />
+            <router-link to="/thanhtoanball">
+              <button class="bt-datsan" @click="submitDateTime">Đặt Sân</button>
+            </router-link>
+          </div>
+          <p v-if="!isFormValid" style="color: red; padding-left: 140px">
+            Vui lòng chọn ngày và giờ trước khi đặt sân.
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -201,7 +164,7 @@ const transportation = [
     text: "Vị trí chính xác xem dưới đây :",
     iframe: {
       src: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3725.7500875440132!2d105.748617!3d20.962549!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313452efff394ce3%3A0x391a39d4325be464!2zVHLGsOG7nW5nIMSQ4bqhaSBI4buNYyBQaGVuaWthYQ!5e0!3m2!1svi!2sus!4v1695110174331!5m2!1svi!2sus",
-      width: "600",
+      width: "100%",
       height: "200",
       style: "margin:10px",
       allowfullscreen: "",
@@ -225,6 +188,10 @@ const schedules = [
 ];
 </script>
 <style scoped>
+.all {
+  max-width: 1900px;
+}
+
 .carousel-img {
   margin: 0 auto;
   width: 100%;
@@ -238,20 +205,53 @@ const schedules = [
   max-width: 1500px;
   width: 90%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.waraper h1 {
-  font-size: 30px;
-  font-weight: 600;
+.header-datsan-container {}
+
+.content-detailll {
+
+  width: 100%;
+  margin: 15px 0;
+  box-shadow: 0 1px 8px 3px #ccc;
+  padding: 10px;
+}
+
+.content-detaill {
+
+  width: 100%;
+  margin: 15px 0;
+  box-shadow: 0 1px 8px 3px #ccc;
+  padding: 10px;
 }
 
 .content-detail {
+
+
+  width: 100%;
   margin: 15px 0;
   box-shadow: 0 1px 8px 3px #ccc;
+  padding: 10px;
 }
 
 .header {
   padding-top: 50px;
+  margin: 20px;
+  max-width: 1900px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 35px;
+  font-weight: 600;
 }
 
 .content-time {
@@ -264,11 +264,12 @@ const schedules = [
   text-align: center;
 }
 
-.detail {
+/* .detail {
   display: flex;
   justify-content: center;
   background-color: #fff;
-}
+
+} */
 
 .detail-1 h1 {
   font-size: 30px;
@@ -297,13 +298,15 @@ const schedules = [
 }
 
 .detail-content {
-  padding: 5px;
+  padding: 3px;
   list-style-type: circle;
 }
 
 .detail-2 ul {
   margin: 5px;
   padding: 14px 0px;
+  padding-left: 50px;
+  width: cover;
 }
 
 .red-cell {
@@ -315,16 +318,15 @@ const schedules = [
 }
 
 .content-datetime {
-  display: flex;
-  justify-content: space-evenly;
   align-items: center;
-  padding: 40px 0 0 100px;
+  padding: 10px;
   max-width: 450px;
   width: 100%;
 }
 
 .date-time {
   padding: 5px;
+  margin: 0 5px;
   border: 1px solid #ccc;
   box-sizing: border-box;
   float: left;
@@ -332,12 +334,12 @@ const schedules = [
 }
 
 .bt-datsan {
-  padding: 5px;
+  width: 100px;
+  padding: 7px;
   border: none;
   background-color: #fa4516;
   color: #fff;
   cursor: pointer;
-  font-size: 17px;
   transition: background-color 0.3s ease;
   border-radius: 0.3rem;
 }
@@ -347,10 +349,13 @@ const schedules = [
 }
 
 .css-content-datetime {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   box-shadow: 0 1px 8px 3px #ccc;
   height: 210px;
   margin: 6px;
-  margin-top: 50px;
+  margin-top: 15px;
 }
 
 .css-content-datetime p {
@@ -358,8 +363,7 @@ const schedules = [
 }
 
 .header-datsan {
-  display: flex;
-  justify-content: center;
+
   font-size: 20px;
   padding-top: 30px;
   font-weight: 600;

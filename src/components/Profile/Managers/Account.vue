@@ -2,26 +2,48 @@
     <div class="wrapper">
         <div v-if="!isEditing" class="content">
             <h1>Thông Tin Tài Khoản</h1>
-            <n-grid cols="4">
-                <n-gi span="1">
-                    <ul>
-                        <li>Tên Đăng Nhập :</li>
-                        <li>Họ Tên :</li>
-                        <li>Giới Tính :</li>
-                        <li>Số Điện Thoại :</li>
-                        <li>Email :</li>
-                        <li>Địa Chỉ :</li>
-                    </ul>
-                </n-gi>
-                <n-gi span="3">
-                    <ul>
-                        <li>{{ userInfo.username }}</li>
-                        <li>{{ userInfo.fullName }}</li>
-                        <li>{{ userInfo.gender }}</li>
-                        <li>{{ userInfo.phone }}</li>
-                        <li>{{ userInfo.email }}</li>
-                        <li>{{ userInfo.address }}</li>
-                    </ul>
+            <n-grid cols="1">
+                <n-gi>
+                    <n-descriptions label-placement="left" bordered :column="1" label-align="center"
+                        style="margin:50px;border-radius: 0.375rem;">
+                        <n-descriptions-item :labelStyle="Dstyle">
+                            <template #label>
+                                Tên Đăng Nhập
+                            </template>
+                            {{ userInfo.username }}
+                        </n-descriptions-item>
+                        <n-descriptions-item :labelStyle="Dstyle">
+                            <template #label>
+                                Họ Tên
+                            </template>
+                            {{ userInfo.fullName }}
+                        </n-descriptions-item>
+                        <n-descriptions-item :labelStyle="Dstyle">
+                            <template #label>
+                                Giới Tính
+                            </template>
+                            {{ userInfo.gender }}
+                        </n-descriptions-item>
+                        <n-descriptions-item :labelStyle="Dstyle">
+                            <template #label>
+                                Phone
+                            </template>
+                            {{ userInfo.phone }}
+                        </n-descriptions-item>
+                        <n-descriptions-item :labelStyle="Dstyle">
+                            <template #label>
+                                Email
+                            </template>
+                            {{ userInfo.email }}
+                        </n-descriptions-item>
+                        <n-descriptions-item :labelStyle="Dstyle">
+                            <template #label>
+                                Địa Chỉ
+                            </template>
+                            {{ userInfo.address }}
+                        </n-descriptions-item>
+    
+                    </n-descriptions>
                 </n-gi>
             </n-grid>
             <div class="btn-edit">
@@ -32,29 +54,50 @@
     
         <div v-if="isEditing" class="edit-content">
             <h1>Chỉnh Sửa Thông Tin Tài Khoản</h1>
-            <n-grid cols="4">
-                <n-gi span="1">
-                    <ul class="edit-ul">
-                        <li>Tên Đăng Nhập :</li>
-                        <li>Họ Tên :</li>
-                        <li>Giới Tính :</li>
-                        <li>Số Điện Thoại :</li>
-                        <li>Email :</li>
-                        <li>Địa Chỉ :</li>
-                    </ul>
-                </n-gi>
-                <n-gi span="3">
-                    <ul>
-                        <li><input v-model="editedUserInfo.username" placeholder="Tên Đăng Nhập" class="edit-form" /></li>
-                        <li><input v-model="editedUserInfo.fullName" placeholder="Họ Tên" class="edit-form" /></li>
-                        <li><input v-model="editedUserInfo.gender" placeholder="Giới Tính" class="edit-form" /></li>
-                        <li><input v-model="editedUserInfo.phone" placeholder="Số Điện Thoại" class="edit-form" /></li>
-                        <li><input v-model="editedUserInfo.email" placeholder="Email" class="edit-form" /></li>
-                        <li><input v-model="editedUserInfo.address" placeholder="Địa Chỉ" class="edit-form" /></li>
-                    </ul>
+            <n-grid cols="1">
+                <n-gi>
+                    <n-descriptions label-placement="left" bordered :column="1" label-align="center"
+                        style="margin:50px;border-radius: 0.375rem;">
+                        <n-descriptions-item :labelStyle="Dstyle">
+                            <template #label>
+                                Tên Đăng Nhập
+                            </template>
+                            <input v-model="editedUserInfo.username" placeholder="Tên Đăng Nhập" class="edit-form" />
+                        </n-descriptions-item>
+                        <n-descriptions-item :labelStyle="Dstyle">
+                            <template #label>
+                                Họ Tên
+                            </template>
+                            <input v-model="editedUserInfo.fullName" placeholder="Họ Tên" class="edit-form" />
+                        </n-descriptions-item>
+                        <n-descriptions-item :labelStyle="Dstyle">
+                            <template #label>
+                                Giới Tính
+                            </template>
+                            <input v-model="editedUserInfo.gender" placeholder="Giới Tính" class="edit-form" />
+                        </n-descriptions-item>
+                        <n-descriptions-item :labelStyle="Dstyle">
+                            <template #label>
+                                Phone
+                            </template>
+                            <input v-model="editedUserInfo.phone" placeholder="Số Điện Thoại" class="edit-form" />
+                        </n-descriptions-item>
+                        <n-descriptions-item :labelStyle="Dstyle">
+                            <template #label>
+                                Email
+                            </template>
+                            <input v-model="editedUserInfo.email" placeholder="Email" class="edit-form" />
+                        </n-descriptions-item>
+                        <n-descriptions-item :labelStyle="Dstyle">
+                            <template #label>
+                                Địa Chỉ
+                            </template>
+                            <input v-model="editedUserInfo.address" placeholder="Địa Chỉ" class="edit-form" />
+                        </n-descriptions-item>
+    
+                    </n-descriptions>
                 </n-gi>
             </n-grid>
-    
             <div class="btn-save">
                 <button @click="saveEditing" type="button" class="button-save"><font-awesome-icon icon="floppy-disk"
                         class="edit-save-icon" /> Save</button>
@@ -103,6 +146,18 @@ onMounted(() => {
     Object.assign(editedUserInfo, JSON.parse(savedUserInfo));
   }
 });
+const props = {
+  widthLable: '250px',
+  padding: '0px',
+  widthContent: '620px',
+  marginBottom: '0px',
+  widthWindow: '768',
+  column: '1'
+};
+const Dstyle = {
+  width: '250px',
+  padding: '0px'
+} 
 </script>
 
 <style scoped>
@@ -157,10 +212,10 @@ onMounted(() => {
 
 
 .edit-form {
-    border: 1px solid #ccc;
-    padding: 0px 10px;
-    border-radius: 2px;
-    width: 300px;
+  border: 1px solid #ccc;
+  padding: 0px 10px;
+  border-radius: 2px;
+  width: 220px;
 }
 
 .button-save {

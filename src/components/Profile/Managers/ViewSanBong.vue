@@ -1,36 +1,38 @@
 <template>
-    <div class="lich-san">
-        <n-grid cols="5">
-            <n-gi span="3" class="content">
-                <div class="content">
-                    <n-calendar v-model:value="value" #="{ year, month, date }" :is-date-disabled="isDateDisabled"
-                        @update:value="handleUpdateValue" v-show="showCalendar">
-                        Ngày {{ date }} Tháng {{ month }}
-                    </n-calendar>
-                </div>
-            </n-gi>
-            <n-gi span="2" class="table-san">
-              <h1>Lịch Sân</h1>
-                <div>
-                    <table class="custom-table" v-show="selectedDate">
-                        <tr>
-                            <th>Giờ</th>
-                            <th>Số Sân</th>
-                            <th>Giá Tiền</th>
-                            <th>Trạng Thái</th>
-                        </tr>
-                        <tr v-for="(item, index) in selectedInfo" :key="index"
-                            :class="{'row-red': item.status === 'Đã Đặt', 'row-green': item.status === 'Còn Trống'}">
-                            <td>{{ item.hour }}</td>
-                            <td>{{ item.court }}</td>
-                            <td>{{ item.price }}</td>
-                            <td>{{ item.status }}</td>
-                        </tr>
-                    </table>
-                </div>
-            </n-gi>
-        </n-grid>
-    </div>
+  <div class="lich-san">
+    <n-grid cols="1">
+      <n-gi><n-button @click="toggleCalendar">Tắt/Bật Lịch Sân</n-button></n-gi>
+      <n-gi class="content">
+        <div class="content">
+          <n-calendar v-model:value="value" #="{ year, month, date }" :is-date-disabled="isDateDisabled"
+            @update:value="handleUpdateValue" v-show="showCalendar">
+            Ngày {{ date }} Tháng {{ month }}
+          </n-calendar>
+        </div>
+      </n-gi>
+  
+      <n-gi class="table-san">
+        <h1>Lịch Sân</h1>
+        <div>
+          <table class="custom-table" v-show="selectedDate">
+            <tr>
+              <th>Giờ</th>
+              <th>Số Sân</th>
+              <th>Giá Tiền</th>
+              <th>Trạng Thái</th>
+            </tr>
+            <tr v-for="(item, index) in selectedInfo" :key="index"
+              :class="{'row-red': item.status === 'Đã Đặt', 'row-green': item.status === 'Còn Trống'}">
+              <td>{{ item.hour }}</td>
+              <td>{{ item.court }}</td>
+              <td>{{ item.price }}</td>
+              <td>{{ item.status }}</td>
+            </tr>
+          </table>
+        </div>
+      </n-gi>
+    </n-grid>
+  </div>
 </template>
   
   <script setup>
@@ -42,6 +44,9 @@ const message = useMessage();
 const value = ref(addDays(Date.now(), 1).valueOf());
 const selectedDate = ref(null);
 const showCalendar = ref(true);
+const toggleCalendar = () => {
+  showCalendar.value = !showCalendar.value;
+};
 
 const handleUpdateValue = (_, { year, month, date }) => {
   message.success(`Ngày ${date} Tháng ${month}`);
@@ -193,48 +198,48 @@ watch(selectedDate, (newSelectedDate) => {
 </script>
 <style scoped>
 .wrapper {
-    height: 1000px;
+  height: 1000px;
 }
 
 .content {
-    width: 99%;
-    height: 99%;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .custom-table {
-    border-collapse: collapse;
-    width: 100%;
+  border-collapse: collapse;
+  width: 100%;
 
 }
 
 .custom-table th,
 .custom-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
 }
 
 .custom-table th {
-    background-color: #f2f2f2;
+  background-color: #f2f2f2;
 }
 
 .row-red {
-    color: red;
+  color: red;
 
 }
 
 .row-green {
-    color: green;
+  color: green;
 
 }
 
-.table-san{
-    margin:0px 10px 0px 10px;
+.table-san {
+  margin: 0px 10px 0px 10px;
 }
-.table-san h1{
-  font-size:30px;
+
+.table-san h1 {
+  font-size: 30px;
   font-weight: 500;
   padding: 10px;
 }

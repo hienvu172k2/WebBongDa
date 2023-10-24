@@ -1,20 +1,20 @@
 <template>
-    <div class="wrapper">
-        <div class="header">
+    <div class="wrapper bg-gray-100 p-6">
+        <div class="header text-center">
             <n-row>
                 <n-col span="24">
-                    <font-awesome-icon class="icon-credit" :icon="['fas', 'credit-card']" />
+                    <font-awesome-icon class="icon-credit text-5xl" :icon="['fas', 'credit-card']" />
                 </n-col>
             </n-row>
             <n-row>
                 <n-col span="24">
-                    <h1 id="the-h1">Thanh Toán</h1>
+                    <h1 id="the-h1" class="text-2xl font-semibold">Thanh Toán</h1>
                     <span>Vui lòng kiểm tra kĩ thông tin sân trước khi đặt sân.</span>
                 </n-col>
             </n-row>
         </div>
-        <div class="content">
-            <n-grid cols="2">
+        <div class="content mt-6">
+            <n-grid cols="1 sm:2">
                 <n-gi class="content-anh" span="1">
                     <img class="carousel-img" :src="infoImage.anh" />
                 </n-gi>
@@ -31,21 +31,24 @@
                             </tr>
                         </tbody>
                     </n-table>
-                    <div class="payment-methods">
-                        <h1>Hình Thức Thanh Toán</h1>
-                        <div v-if="bankingSelected" style="display:flex;justify-content:center">
-                            <img src="../../assets/images/qrthanhtoan.png" alt="Banking" style="width:50%;height:50%;" />
+                    <div class="payment-methods mt-4 mx-auto my-auto">
+                        <h1 class="text-lg font-semibold">Hình Thức Thanh Toán</h1>
+                        <div v-if="bankingSelected" class="flex justify-center">
+                            <img src="../../assets/images/qrthanhtoan.png" alt="Banking" class="w-1/2 h-auto anh-qr" />
                         </div>
-                        <router-link to="/bookedball"> <button @click="handlePayment">Xem Thông Tin Sân Đã
-                                Đặt</button></router-link>
+                        <router-link to="/bookedball">
+                            <button @click="handlePayment" class="btn-xemchitiet">
+                                Xem Thông Tin Sân Đã Đặt
+                            </button>
+                        </router-link>
                     </div>
                 </n-gi>
             </n-grid>
         </div>
     </div>
 </template>
-
-<script setup>
+  
+  <script setup>
 import { ref } from 'vue';
 const bankingSelected = ref(true);
 const sanInfo = ref({
@@ -59,15 +62,19 @@ const sanInfo = ref({
 const infoImage = ref({
   anh: 'https://sanconhantao.vn/wp-content/uploads/2020/10/San-dai-hoc-Phenikaa-4.jpg',
 })
-</script>
-
-<style scoped>
+  </script>
+  
+  <style scoped>
 .wrapper {
     margin: auto;
     max-width: 1000px;
     width: 100%;
     padding-bottom: 300px;
+    background-color: #fff;
+    box-shadow: 0 1px 8px 3px #ccc;
 }
+
+.content {}
 
 .header {
     max-width: 500px;
@@ -129,21 +136,26 @@ const infoImage = ref({
 }
 
 .payment-methods {
-    width: 100%;
+    width: 50%;
     height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
 }
 
 .payment-methods h1 {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
-    padding: 10px;
+    margin-bottom: 10px;
 }
 
 .payment-methods button {
     border: 1px solid #000;
-    border-radius: 3px;
+    border-radius: 0.375rem;
     padding: 5px;
+    margin-top: 10px;
+    width: 180px;
 }
 
 .payment-methods button:hover {
@@ -152,3 +164,4 @@ const infoImage = ref({
     cursor: pointer;
 }
 </style>
+  

@@ -117,31 +117,32 @@ const columns = [
   {
     title: 'Tên Sân',
     key: 'name',
-    width: 250,
+    minWidth: "250",
     align: 'center',
   },
   {
     title: 'Địa Chỉ',
     key: 'address',
     align: 'center',
+    minWidth: "250",
   },
   {
     title: 'Thời Gian',
     key: 'time',
     align: 'center',
+    minWidth: "100",
   },
   {
     title: 'Giá Sân',
     key: 'price',
     align: 'center',
-
+    minWidth: "100",
   }
 ];
 </script>
 
 <style scoped>
 .wrapper {
-  height: auto;
   padding: 15px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding-bottom: 70px;

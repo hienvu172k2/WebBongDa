@@ -1,12 +1,13 @@
 <template>
   <div class="wrapper">
-    <n-grid cols="6">
-      <n-gi span="1" class="menu">
+    <n-grid cols="1 s:1 m:1 l:8 xl:8" responsive="screen" x-gap="20" y-gap="20">
+      <n-gi span="2" class="menu">
         <div class="menu-up">
           <img :src="userImage.url" alt="">
           <h1>Vũ Văn Hiến</h1>
           <small>Người Dùng</small>
         </div>
+  
         <div class="menu-down">
           <ul>
             <li @click="selectedTab = 'account'" :class="{ active: selectedTab === 'account' }">
@@ -32,12 +33,16 @@
           </ul>
         </div>
       </n-gi>
-      <n-gi span="5" class="content">
+      <n-gi span="6" class="content">
         <div v-if="selectedTab === 'account'">
           <Account />
         </div>
-        <div v-if="selectedTab === 'bookings'"> <BookedBall/> </div>
-        <div v-if="selectedTab === 'transactions'"><LichSuGiaoDich/></div>
+        <div v-if="selectedTab === 'bookings'">
+          <BookedBall />
+        </div>
+        <div v-if="selectedTab === 'transactions'">
+          <LichSuGiaoDich />
+        </div>
         <div v-if="selectedTab === 'promotions'">Nội dung Ưu Đãi Và Khuyến Mãi</div>
         <div v-if="selectedTab === 'support'">Nội dung Hỗ Trợ</div>
       </n-gi>
@@ -62,12 +67,11 @@ const userImage = ref({
   margin: auto;
   width: 1600px;
   max-width: 100%;
-  padding-top:50px ;
+  padding-top: 50px;
 }
 
 .menu {
-  height: 480px;
-  width: 250px;
+  /* height: 480px; */
   max-width: 100%;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   margin: 0px 10px 0 0;
@@ -75,8 +79,6 @@ const userImage = ref({
 
 .content {
   height: 800px;
-  width: auto;
-  
 }
 
 .menu-up {
@@ -108,15 +110,14 @@ const userImage = ref({
 
 .menu-down {
   padding: 10px;
-  width: 100%;
-  height: auto ;
+  height: auto;
 }
 
 .menu-down ul li {
   padding: 10px 10px;
   cursor: pointer;
-  max-width: 250px; 
-  white-space: nowrap; /* Ngăn nội dung xuống dòng */
+  max-width: 370px;
+  white-space: nowrap;
 }
 
 .menu-down ul li:hover {

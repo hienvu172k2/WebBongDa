@@ -75,7 +75,7 @@ const nextPage = () => {
 <style scoped>
 .wrapper {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-     height: 800px;
+    height: 800px;
 }
 
 .wrapper h1 {

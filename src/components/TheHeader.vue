@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <header class="header-content fixed top-0 left-0 w-full bg-white z-50">
-            <nav class="mx-auto flex max-w-7xl items-center justify-around p-6 lg:px-8" aria-label="Global">
+            <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div class="flex lg:flex-1 items-center">
                     <a href="#" class="flex items-center -m-1.5 p-1.5">
                         <img class="h-20 w-auto" src="../assets/images/Logo.jpg" alt="" />
@@ -122,7 +122,7 @@
                                             aria-hidden="true" />
                                     </DisclosureButton>
                                     <DisclosurePanel class="mt-2 space-y-2">
-                                        
+    
                                     </DisclosurePanel>
                                 </Disclosure>
                                 <router-link to="/home"
