@@ -94,6 +94,10 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="shop">
+                        <button @click="openShoppingCart"><font-awesome-icon :icon="['fas', 'cart-shopping']" /></button>
+                        <ShoppingCart :open="open" />
+                    </div>
                 </div>
             </nav>
             <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
@@ -169,6 +173,10 @@
                                     </div>
     
                                 </div>
+                                <div class="shop">
+                                    <button @click="openShoppingCart"><font-awesome-icon :icon="['fas', 'cart-shopping']" /></button>
+                                    <ShoppingCart :open="open" />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -179,6 +187,12 @@
 </template>
 
 <script setup>
+import ShoppingCart from "./QuanAo/ShoppingCart..vue"
+const open = ref(false);
+
+const openShoppingCart = () => {
+  open.value = true;
+};
 const isDropdownOpen = ref(false);
 const toggleDropdown = () => {
   isDropdownOpen.value = !isDropdownOpen.value;
@@ -297,5 +311,9 @@ const mobileMenuOpen = ref(false)
 
 .menu-item {
     padding: 0px 5px;
+}
+
+.shop {
+    padding: 10px 30px 10px 10px;
 }
 </style>

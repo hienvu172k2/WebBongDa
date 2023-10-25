@@ -4,7 +4,26 @@ import App from "./App.vue";
 import naive from "naive-ui";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import {faLocationDot,faEnvelope,faPhone,faCreditCard,faUser,faArrowRightFromBracket,faUserPen,faTag,faHeadphones,faFileInvoiceDollar,faFutbol,faFilePen,faSave,faArrowRight,faArrowLeft,faTrash,faFloppyDisk,faEye
+import {
+  faLocationDot,
+  faEnvelope,
+  faPhone,
+  faCreditCard,
+  faUser,
+  faArrowRightFromBracket,
+  faUserPen,
+  faTag,
+  faHeadphones,
+  faFileInvoiceDollar,
+  faFutbol,
+  faFilePen,
+  faSave,
+  faArrowRight,
+  faArrowLeft,
+  faTrash,
+  faFloppyDisk,
+  faEye,
+  faCartShopping
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faTwitter,
@@ -34,7 +53,8 @@ library.add(
   faArrowLeft,
   faTrash,
   faFloppyDisk,
-  faEye
+  faEye,
+  faCartShopping
 );
 import { createRouter, createWebHistory } from "vue-router";
 import BookingBallLayout from "./components/DatSanBong/BookingBallLayout.vue";
@@ -50,7 +70,7 @@ import ManageProfile from "./components/Profile/Managers/ManageProfile.vue";
 import BookedBall from "./components/Profile/Users/BookedBall.vue";
 import ConTact from "./components/ConTact.vue";
 import { create } from "naive-ui";
-
+import CategoryVue from "./components/QuanAo/Category.vue";
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -69,6 +89,7 @@ const router = createRouter({
     { path: "/manage", component: ManageProfile },
     { path: "/bookedball", component: BookedBall },
     { path: "/contact", component: ConTact },
+    { path: "/quanao", component: CategoryVue },
   ],
 });
 

@@ -44,7 +44,7 @@ const products = [
   {
     id: 3,
     name: 'Áo Đá ',
-    href: '#',
+    href: '/quanao',
     imageSrc: 'https://rozaco.vn/wp-content/uploads/2022/08/AoKhongLogo-Ro-BG000088.jpg',
     title: 'Khoác lên những "Chiến Bào" giúp mọi người tự tin chiến thắng.',
   },

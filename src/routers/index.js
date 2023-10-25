@@ -48,6 +48,10 @@ const routes = [
         path: "contact",
         component: () => import("../components/ConTact.vue"),
       },
+      {
+        path: "quanao",
+        component: () => import("../components/QuanAo/Category.vue"),
+      },
     ],
   },
 ];
