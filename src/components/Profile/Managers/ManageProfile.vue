@@ -74,7 +74,7 @@ const userImage = ref({
 }
 
 .content {
-  height: 1200px;
+  /* height: 1200px; */
   width: auto;
   margin-top: -35px;
 

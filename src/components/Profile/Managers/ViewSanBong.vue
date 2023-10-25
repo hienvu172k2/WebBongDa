@@ -4,7 +4,7 @@
       <n-gi><n-button @click="toggleCalendar">Tắt/Bật Lịch Sân</n-button></n-gi>
       <n-gi class="content">
         <div class="content">
-          <n-calendar v-model:value="value" #="{ year, month, date }" :is-date-disabled="isDateDisabled"
+          <n-calendar v-model:value="value" #="{ year, month, date }"
             @update:value="handleUpdateValue" v-show="showCalendar">
             Ngày {{ date }} Tháng {{ month }}
           </n-calendar>

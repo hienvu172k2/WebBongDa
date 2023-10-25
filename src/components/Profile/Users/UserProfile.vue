@@ -78,7 +78,7 @@ const userImage = ref({
 }
 
 .content {
-  height: 800px;
+  /* height: 800px; */
 }
 
 .menu-up {

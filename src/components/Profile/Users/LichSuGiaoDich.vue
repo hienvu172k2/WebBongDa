@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div class="wrapper">
         <h1>Lịch Sử Giao Dịch</h1>
         <div class="content">
@@ -143,5 +143,98 @@ const nextPage = () => {
 .pagination-icon:hover {
     font-size: 17px;
     color: rgb(250, 69, 22);
+}
+</style> -->
+
+
+<template>
+    <div class="wrapper">
+        <h1>Lịch Sử Giao Dịch</h1>
+        <n-data-table :bordered="true" :single-line="true" :key="(row) => row.key" :columns="columns" :data="data"
+            :pagination="paginationRef" :on-update:page="handlePageChange" />
+    </div>
+</template>
+    
+  <script setup>
+import { ref, computed } from 'vue'
+
+const products = [
+  { stt: 1, name: 'Sân Trường Đại Học Phenikaa', address: 'Nguyễn Văn Trác, phường Yên Nghĩa, quận Hà Đông, thành phố Hà Nội', time: ' 10:00,  20-10-2023', price: "500.000", status: 'Đã thanh toán' },
+  { stt: 2, name: 'Sân Trường Đại Học Phenikaa', address: 'Địa chỉ B', time: '  10:00,  20-10-2023', price: "300.000", status: 'Đang Chờ Xác Nhận' },
+  { stt: 3, name: 'Sân Trường Đại Học Phenikaa', address: 'Địa chỉ B', time: '  10:00,  20-10-2023', price: "300.000", status: 'Đang Chờ Xác Nhận' },
+  { stt: 4, name: 'Sân Trường Đại Học Phenikaa', address: 'Địa chỉ B', time: '  10:00,  20-10-2023', price: "300.000", status: 'Đang Chờ Xác Nhận' },
+  { stt: 5, name: 'Sân Trường Đại Học Phenikaa', address: 'Địa chỉ B', time: '  10:00,  20-10-2023', price: "300.000", status: 'Đang Chờ Xác Nhận' },
+  { stt: 6, name: 'Sân Trường Đại Học Phenikaa', address: 'Địa chỉ B', time: '  10:00,  20-10-2023', price: "300.000", status: 'Đang Chờ Xác Nhận' },
+  { stt: 7, name: 'Sân Trường Đại Học Phenikaa', address: 'Địa chỉ B', time: '  10:00,  20-10-2023', price: "300.000", status: 'Đang Chờ Xác Nhận' },
+  { stt: 8, name: 'Sân Trường Đại Học Phenikaa', address: 'Địa chỉ B', time: '  10:00,  20-10-2023', price: "300.000", status: 'Đang Chờ Xác Nhận' },
+  { stt: 9, name: 'Sân Trường Đại Học Phenikaa', address: 'Địa chỉ B', time: '  10:00,  20-10-2023', price: "300.000", status: 'Đang Chờ Xác Nhận' },
+  { stt: 10, name: 'Sân Trường Đại Học Phenikaa', address: 'Địa chỉ B', time: '  10:00,  20-10-2023', price: "300.000", status: 'Đang Chờ Xác Nhận' },
+  { stt: 11, name: 'Sân Trường Đại Học Phenikaa', address: 'Địa chỉ B', time: '  10:00,  20-10-2023', price: "300.000", status: 'Đang Chờ Xác Nhận' },
+
+]
+
+const data = ref(products);
+
+const page = ref(1);
+
+const handlePageChange = (curPage) => {
+  page.value = curPage;
+};
+
+const paginationRef = computed(() => ({
+  pageSize: 10,
+  page: page.value
+}));
+
+
+const columns = [
+  {
+    title: 'STT',
+    key: 'stt',
+    width: 70,
+    align: 'center',
+    render(_, index) {
+      return index + 1;
+    }
+  },
+  {
+    title: 'Tên Sân',
+    key: 'name',
+    minWidth: "250",
+    align: 'center',
+  },
+  {
+    title: 'Địa Chỉ',
+    key: 'address',
+    align: 'center',
+    minWidth: "250",
+  },
+  {
+    title: 'Thời Gian',
+    key: 'time',
+    align: 'center',
+    minWidth: "100",
+  },
+  {
+    title: 'Giá Sân',
+    key: 'price',
+    align: 'center',
+    minWidth: "100",
+  }
+];
+  </script>
+  
+  <style scoped>
+.wrapper {
+    padding: 15px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding-bottom: 70px;
+}
+
+.wrapper h1 {
+    padding: 20px 10px;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
 }
 </style>
