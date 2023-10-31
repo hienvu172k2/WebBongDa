@@ -1,6 +1,7 @@
 <template>
     <div>
         <Carousel />
+        <BallNews />
         <ServiceBall />
         <BannerBall />
         <AboutUs />
@@ -14,4 +15,5 @@ import ServiceBall from '../components/ServiceBall.vue';
 import BlogSections from '../components/BlogSections.vue';
 import BannerBall from '../components/BannerBall.vue';
 import AboutUs from '../components/AboutUs.vue';
+import BallNews from '../components/FootBallNews/BallNews.vue';
 </script>

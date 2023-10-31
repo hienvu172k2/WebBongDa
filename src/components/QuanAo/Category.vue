@@ -1,3 +1,4 @@
+
 <template>
   <div class="wrapper">
     <div class="bg-white">
@@ -123,7 +124,7 @@
                                     <RadioGroupLabel as="span">{{ size.name }}</RadioGroupLabel>
                                     <span v-if="size.inStock"
                                       :class="[active ? 'border' : 'border-2', checked ? 'border-indigo-500' : 'border-transparent', 'pointer-events-none absolute -inset-px rounded-md']"
-                                      aria-hidden="true" ></span>
+                                      aria-hidden="true"></span>
                                     <span v-else aria-hidden="true"
                                       class="pointer-events-none absolute -inset-px rounded-md border-2 border-gray-200">
                                       <svg class="absolute inset-0 h-full w-full stroke-2 text-gray-200"
@@ -447,9 +448,10 @@ const selectedColor = ref(null);
 const selectedSize = ref(null);
 </script>
 <style scoped>
-.wrapper{
-  margin:10px;
+.wrapper {
+  margin: 10px;
 }
+
 .pagination {
   padding-bottom: 100px;
 }
