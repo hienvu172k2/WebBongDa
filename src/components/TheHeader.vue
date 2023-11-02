@@ -91,13 +91,19 @@
                                         Logout
                                     </li>
                                 </router-link>
+    
+    
                             </ul>
+                            <div class="shop">
+                                <button @click="openShoppingCart">
+                                    <font-awesome-icon :icon="['fas', 'cart-shopping']" />
+                                </button>
+                                <ShoppingCart :open="open" />
+                            </div>
+    
                         </div>
                     </div>
-                    <div class="shop">
-                        <button @click="openShoppingCart"><font-awesome-icon :icon="['fas', 'cart-shopping']" /></button>
-                        <ShoppingCart :open="open" />
-                    </div>
+    
                 </div>
             </nav>
             <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
@@ -174,7 +180,9 @@
     
                                 </div>
                                 <div class="shop">
-                                    <button @click="openShoppingCart"><font-awesome-icon :icon="['fas', 'cart-shopping']" /></button>
+                                    <button @click="openShoppingCart">Giỏ Hàng
+                                        <font-awesome-icon :icon="['fas', 'cart-shopping']" />
+                                    </button>
                                     <ShoppingCart :open="open" />
                                 </div>
                             </div>
@@ -189,7 +197,6 @@
 <script setup>
 import ShoppingCart from "./QuanAo/ShoppingCart..vue"
 const open = ref(false);
-
 const openShoppingCart = () => {
   open.value = true;
 };
@@ -197,6 +204,8 @@ const isDropdownOpen = ref(false);
 const toggleDropdown = () => {
   isDropdownOpen.value = !isDropdownOpen.value;
 };
+const mobileMenuOpen = ref(false)
+
 import { ref } from "vue";
 import {
   Dialog,
@@ -219,7 +228,6 @@ import {
   XMarkIcon,
 } from '@heroicons/vue/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/vue/20/solid'
-const mobileMenuOpen = ref(false)
 </script>
 <style scoped>
 .wrapper {

@@ -313,14 +313,14 @@ onMounted(() => {
 }
 
 .checkbox-btn {
-  display: grid; 
-  grid-template-columns: auto 1fr; 
-  grid-column-gap: 10px; 
-  align-items: center; 
-  padding:3px;
-}
-.checkbox-btn n-checkbox {
-  align-self: flex-start; 
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-column-gap: 10px;
+  align-items: center;
+  padding: 3px;
 }
 
+.checkbox-btn n-checkbox {
+  align-self: flex-start;
+}
 </style>

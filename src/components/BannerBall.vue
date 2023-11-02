@@ -18,9 +18,9 @@
           <circle cx="1" cy="1" r="1" />
         </svg>Đặt ngay sân vào 1/9 đến 3/9 được giảm 10%
       </p>
-      <a href="#"
-        class="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">Đặt Sân Ngay
-   <span aria-hidden="true">&rarr;</span></a>
+      <router-link to="/bookingball"
+        class="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">Đặt
+        Sân Ngay</router-link>
     </div>
     <div class="flex flex-1 justify-end">
   

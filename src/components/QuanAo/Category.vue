@@ -1,9 +1,8 @@
-
 <template>
   <div class="wrapper">
     <div class="bg-white">
       <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-        <h2 class="text-2xl font-bold tracking-tight text-gray-900">Quần Áo Đá </h2>
+        <h2 class="text-2xl font-bold tracking-tight text-gray-900">Quần Áo Đá</h2>
   
         <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           <div v-for="product in currentPageProducts" :key="product.id" class="group relative">
@@ -33,7 +32,7 @@
       <Dialog as="div" class="relative z-10" @close="closeProductDialog">
         <TransitionChild as="template" enter="ease-out duration-300" enter-from="opacity-0" enter-to="opacity-100"
           leave="ease-in duration-200" leave-from="opacity-100" leave-to="opacity-0">
-          <div class="fixed inset-0 hidden bg-gray-500 bg-opacity-75 transition-opacity md:block" />
+          <div class="fixed inset-0 hidden bg-gray-500 bg-opacity-75 transition-opacity md:block"></div>
         </TransitionChild>
   
         <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
@@ -46,7 +45,7 @@
               <DialogPanel
                 class="flex w-full transform text-left text-base transition md:my-8 md:max-w-2xl md:px-4 lg:max-w-4xl">
                 <div
-                  class="relative flex w-full items-center overflow-hidden bg-white px-4 pb-8 pt-14 shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8">
+                  class="content relative flex w-full items-center overflow-hidden bg-white px-4 pb-8 pt-14 shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8">
                   <button type="button"
                     class="absolute right-4 top-4 text-gray-400 hover:text-gray-500 sm:right-6 sm:top-8 md:right-6 md:top-6 lg:right-8 lg:top-8"
                     @click="closeProductDialog">
@@ -68,8 +67,8 @@
                         <p class="text-2xl text-gray-900">{{ selectedProduct.price }}</p>
   
                         <!-- Reviews -->
-                        <div class="mt-6">
-                          <h4 class="sr-only">Reviews</h4>
+                        <div class="mt-8 sm:hidden">
+                          <h4 class="text-sm font-medium text-gray-900">Reviews</h4>
                           <div class="flex items-center">
                             <div class="flex items-center">
                               <StarIcon v-for="rating in [0, 1, 2, 3, 4]" :key="rating"
@@ -78,7 +77,7 @@
                             </div>
                             <p class="sr-only">{{ selectedProduct.rating }} out of 5 stars</p>
                             <a href="#" class="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">{{
-                              selectedProduct.reviewCount }} reviews</a>
+                              selectedProduct.reviewCount }} Đánh Giá</a>
                           </div>
                         </div>
                       </section>
@@ -89,7 +88,7 @@
                         <form>
                           <!-- Colors -->
                           <div>
-                            <h4 class="text-sm font-medium text-gray-900">Color</h4>
+                            <h4 class="text-sm font-medium text-gray-900">Chọn Màu</h4>
   
                             <RadioGroup v-model="selectedColor" class="mt-4">
                               <RadioGroupLabel class="sr-only">Choose a color</RadioGroupLabel>
@@ -139,8 +138,8 @@
                           </div>
   
                           <button type="submit"
-                            class="mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Add
-                            to bag</button>
+                            class="mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Thêm
+                            Vào Giỏ Hàng</button>
                         </form>
                       </section>
                     </div>
@@ -164,6 +163,7 @@
   </div>
 </template>
 
+
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import {
@@ -184,11 +184,10 @@ const filteredProducts = ref([]);
 const products = [
   {
     id: 1,
-    name: 'Basic Tee',
+    name: 'Áo Đá Việt Nam',
     href: '#',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
+    price: '300.000 Vnd',
     color: 'Black',
     rating: 3.9,
     reviewCount: 117,
@@ -213,11 +212,9 @@ const products = [
   },
   {
     id: 2,
-    name: 'Basic Tee',
+    name: 'Áo Đá Việt Nam',
     href: '#',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-    imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
+    price: '300.000 Vnd',
     color: 'Black',
     rating: 3.9,
     reviewCount: 117,
@@ -241,11 +238,9 @@ const products = [
     ],
   }, {
     id: 3,
-    name: 'Basic Tee',
+    name: 'Áo Đá Việt Nam',
     href: '#',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-    imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
+    price: '300.000 Vnd',
     color: 'Black',
     rating: 3.9,
     reviewCount: 117,
@@ -269,11 +264,9 @@ const products = [
     ],
   }, {
     id: 4,
-    name: 'Basic Tee',
+    name: 'Áo Đá Việt Nam',
     href: '#',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-    imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
+    price: '300.000 Vnd',
     color: 'Black',
     rating: 3.9,
     reviewCount: 117,
@@ -297,16 +290,14 @@ const products = [
     ],
   }, {
     id: 5,
-    name: 'Ao da',
+    name: 'Áo Đá Việt Nam',
     href: '#',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-    imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
+    price: '300.000 Vnd',
     color: 'Black',
     rating: 3.9,
     reviewCount: 117,
     href: '#',
-    imageSrc: 'https://th.bing.com/th/id/R.50c7934bd6541abbb51e48f4d9a3f87e?rik=t%2bUklWGK5pLWJA&riu=http%3a%2f%2fbelo.vn%2fwp-content%2fuploads%2f2018%2f11%2fz1188384674228_416a3f7ef7a51b72f6098f6a68536743.jpg&ehk=c%2fSM4moCTUr04VPvYN%2bT6incwFEJHXADwZ6kJmDKyHA%3d&risl=&pid=ImgRaw&r=0',
+    imageSrc: 'https://belo.vn/wp-content/uploads/2018/11/z1188384711253_b6f0da3ac39aa5537f3536ff9e1d82b8.jpg',
     imageAlt: 'Two each of gray, white, and black shirts arranged on table.',
     colors: [
       { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
@@ -325,16 +316,14 @@ const products = [
     ],
   }, {
     id: 6,
-    name: 'Basic Tee',
+    name: 'Áo Đá Việt Nam',
     href: '#',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-    imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
+    price: '300.000 Vnd',
     color: 'Black',
     rating: 3.9,
     reviewCount: 117,
     href: '#',
-    imageSrc: 'https://th.bing.com/th/id/R.50c7934bd6541abbb51e48f4d9a3f87e?rik=t%2bUklWGK5pLWJA&riu=http%3a%2f%2fbelo.vn%2fwp-content%2fuploads%2f2018%2f11%2fz1188384674228_416a3f7ef7a51b72f6098f6a68536743.jpg&ehk=c%2fSM4moCTUr04VPvYN%2bT6incwFEJHXADwZ6kJmDKyHA%3d&risl=&pid=ImgRaw&r=0',
+    imageSrc: 'https://belo.vn/wp-content/uploads/2018/11/z1188384711253_b6f0da3ac39aa5537f3536ff9e1d82b8.jpg',
     imageAlt: 'Two each of gray, white, and black shirts arranged on table.',
     colors: [
       { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
@@ -353,16 +342,14 @@ const products = [
     ],
   }, {
     id: 7,
-    name: 'Basic Tee',
+    name: 'Áo Đá Việt Nam',
     href: '#',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-    imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
+    price: '300.000 Vnd',
     color: 'Black',
     rating: 3.9,
     reviewCount: 117,
     href: '#',
-    imageSrc: 'https://th.bing.com/th/id/R.50c7934bd6541abbb51e48f4d9a3f87e?rik=t%2bUklWGK5pLWJA&riu=http%3a%2f%2fbelo.vn%2fwp-content%2fuploads%2f2018%2f11%2fz1188384674228_416a3f7ef7a51b72f6098f6a68536743.jpg&ehk=c%2fSM4moCTUr04VPvYN%2bT6incwFEJHXADwZ6kJmDKyHA%3d&risl=&pid=ImgRaw&r=0',
+    imageSrc: 'https://belo.vn/wp-content/uploads/2018/11/z1188384711253_b6f0da3ac39aa5537f3536ff9e1d82b8.jpg',
     imageAlt: 'Two each of gray, white, and black shirts arranged on table.',
     colors: [
       { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
@@ -381,16 +368,14 @@ const products = [
     ],
   }, {
     id: 8,
-    name: 'Basic Tee',
+    name: 'Áo Đá Việt Nam',
     href: '#',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-    imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
+    price: '300.000 Vnd',
     color: 'Black',
     rating: 3.9,
     reviewCount: 117,
     href: '#',
-    imageSrc: 'https://th.bing.com/th/id/R.50c7934bd6541abbb51e48f4d9a3f87e?rik=t%2bUklWGK5pLWJA&riu=http%3a%2f%2fbelo.vn%2fwp-content%2fuploads%2f2018%2f11%2fz1188384674228_416a3f7ef7a51b72f6098f6a68536743.jpg&ehk=c%2fSM4moCTUr04VPvYN%2bT6incwFEJHXADwZ6kJmDKyHA%3d&risl=&pid=ImgRaw&r=0',
+    imageSrc: 'https://belo.vn/wp-content/uploads/2018/11/z1188384711253_b6f0da3ac39aa5537f3536ff9e1d82b8.jpg',
     imageAlt: 'Two each of gray, white, and black shirts arranged on table.',
     colors: [
       { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
@@ -450,6 +435,10 @@ const selectedSize = ref(null);
 <style scoped>
 .wrapper {
   margin: 10px;
+}
+
+.content {
+  margin-top: 120px;
 }
 
 .pagination {
