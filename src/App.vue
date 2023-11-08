@@ -4,6 +4,7 @@
     <router-view />
     <FooterBall />
   </div>
+  
 </template>
 
 <script setup>

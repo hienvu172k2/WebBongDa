@@ -151,6 +151,9 @@
         </div>
       </Dialog>
     </TransitionRoot>
+    <div>
+      
+    </div>
     <div class="pagination flex justify-center items-center p-4 lg:p-8">
       <button @click="prevPage" :disabled="page === 1" class="icon-pagination">
         <font-awesome-icon :icon="['fas', 'arrow-left']" />
@@ -160,6 +163,9 @@
         <font-awesome-icon :icon="['fas', 'arrow-right']" />
       </button>
     </div>
+  </div>
+  <div>
+    
   </div>
 </template>
 

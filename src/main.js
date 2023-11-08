@@ -23,7 +23,7 @@ import {
   faTrash,
   faFloppyDisk,
   faEye,
-  faCartShopping
+  faCartShopping,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faTwitter,
@@ -71,6 +71,7 @@ import BookedBall from "./components/Profile/Users/BookedBall.vue";
 import ConTact from "./components/ConTact.vue";
 import { create } from "naive-ui";
 import CategoryVue from "./components/QuanAo/Category.vue";
+import DetailNew from "./components/FootBallNews/DetailNew.vue";
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -90,6 +91,7 @@ const router = createRouter({
     { path: "/bookedball", component: BookedBall },
     { path: "/contact", component: ConTact },
     { path: "/quanao", component: CategoryVue },
+    { path: "/tintuc", component: DetailNew },
   ],
 });
 

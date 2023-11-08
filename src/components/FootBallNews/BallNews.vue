@@ -24,11 +24,9 @@
                 </n-gi>
     
                 <n-gi span="3" class="lg:span-4 xl:span-3">
-                    <div class="mid ">
-                        <img class="lg:h-full lg:w-full " :src="footballItems[2] ? footballItems[2].imgFootBall : ''"
-                            alt="">
-                        <a>{{ footballItems[2] ? footballItems[2].name : '' }}</a>
-                    </div>
+                    <router-link to="/tintuc" class="mid"><img class="lg:h-full lg:w-full "
+                            :src="footballItems[2] ? footballItems[2].imgFootBall : ''" alt="">
+                        <a>{{ footballItems[2] ? footballItems[2].name : '' }}</a></router-link>
                 </n-gi>
     
                 <n-gi span="1" class="lg:span-2 xl:span-1">

@@ -52,6 +52,10 @@ const routes = [
         path: "quanao",
         component: () => import("../components/QuanAo/Category.vue"),
       },
+      {
+        path:"tintuc",
+        component:() => import("../components/FootBallNews/DetailNew.vue")
+      }
     ],
   },
 ];
